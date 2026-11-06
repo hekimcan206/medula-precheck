@@ -27,9 +27,12 @@ public sealed record BatchReport(
     IReadOnlyList<RuleCount> ByRule,
     IReadOnlyList<InvoiceResult> Invoices)
 {
+    private const string Lf = "\n";
+
     public static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web)
     {
         WriteIndented = true,
+        NewLine = Lf,
         Converters = { new JsonStringEnumConverter() },
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
         // Keep Turkish characters readable in the JSON file instead of \u escapes.

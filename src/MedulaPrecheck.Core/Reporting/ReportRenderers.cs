@@ -14,6 +14,9 @@ public enum ReportFormat
 
 public static class ReportRenderer
 {
+    // Reports are byte-identical on Windows and Linux; the committed samples are approval files.
+    private const string Lf = "\n";
+
     private static readonly CultureInfo Inv = CultureInfo.InvariantCulture;
 
     public static string Render(BatchReport report, ReportFormat format) => format switch
@@ -59,7 +62,7 @@ public static class ReportRenderer
             sb.AppendLine();
         }
 
-        return sb.ToString();
+        return sb.ToString().ReplaceLineEndings(Lf);
     }
 
     public static string Html(BatchReport report)
@@ -122,7 +125,7 @@ public static class ReportRenderer
         }
 
         sb.AppendLine("</main></body></html>");
-        return sb.ToString();
+        return sb.ToString().ReplaceLineEndings(Lf);
     }
 
     private static void Card(StringBuilder sb, string label, string value) =>
