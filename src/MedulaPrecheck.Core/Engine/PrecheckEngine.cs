@@ -19,7 +19,46 @@ public sealed record InvoiceResult(
     InvoiceOutcome Outcome,
     decimal Total,
     decimal AmountAtRisk,
-    IReadOnlyList<Finding> Findings);
+    IReadOnlyList<Finding> Findings)
+{
+    /// <summary>Builds a result from findings produced by any evaluator (.NET rules or the PL/SQL package).</summary>
+    public static InvoiceResult Create(Invoice invoice, string? sutVersion, IEnumerable<Finding> findings)
+    {
+        ArgumentNullException.ThrowIfNull(invoice);
+        var ordered = findings
+            .OrderBy(f => f.LineNo ?? 0)
+            .ThenBy(f => f.RuleId, StringComparer.Ordinal)
+            .ToList();
+        return new InvoiceResult(invoice.InvoiceNo, invoice.InvoiceDate, sutVersion, OutcomeOf(ordered), invoice.Total,
+            AtRisk(invoice, ordered), ordered);
+    }
+
+    private static InvoiceOutcome OutcomeOf(List<Finding> findings) =>
+        findings.Any(f => f.Severity == Severity.Error) ? InvoiceOutcome.Rejected
+        : findings.Any(f => f.Severity == Severity.Warning) ? InvoiceOutcome.NeedsReview
+        : InvoiceOutcome.Clean;
+
+    /// <summary>
+    /// Money SGK would not pay as submitted: the amount of every line with an Error, or the whole invoice when an
+    /// Error is invoice-level (a bad provision blocks every line).
+    /// </summary>
+    private static decimal AtRisk(Invoice invoice, List<Finding> findings)
+    {
+        var errors = findings.Where(f => f.Severity == Severity.Error).ToList();
+        if (errors.Count == 0)
+        {
+            return 0m;
+        }
+
+        if (errors.Any(f => f.LineNo is null))
+        {
+            return invoice.Total;
+        }
+
+        var lines = errors.Select(f => f.LineNo!.Value).ToHashSet();
+        return invoice.Lines.Where(l => lines.Contains(l.LineNo)).Sum(l => l.Amount);
+    }
+}
 
 /// <summary>
 /// Applies the rule set of the SUT version valid on each invoice's date. The engine is immutable and
@@ -79,15 +118,7 @@ public sealed class PrecheckEngine
         var version = Catalog.ResolveFor(invoice.InvoiceDate);
         if (version is null)
         {
-            var rule = RuleDefinitions.NoVersion;
-            var earliest = InvoiceContext.Date(Catalog.Versions[0].EffectiveFrom);
-            var actual = InvoiceContext.Date(invoice.InvoiceDate);
-            var finding = new Finding(
-                rule.Id, rule.Category, Severity.Error, null, null, earliest, actual,
-                rule.FormatReason(null, null, earliest, actual), rule.FormatFix(null, null, earliest, actual),
-                new SuggestedFix(rule.FixAction, null, null));
-            return new InvoiceResult(invoice.InvoiceNo, invoice.InvoiceDate, null, InvoiceOutcome.Rejected,
-                invoice.Total, invoice.Total, [finding]);
+            return NoVersion(invoice);
         }
 
         var context = new InvoiceContext(invoice, version);
@@ -99,18 +130,17 @@ public sealed class PrecheckEngine
             }
         }
 
-        var findings = context.Findings
-            .OrderBy(f => f.LineNo ?? 0)
-            .ThenBy(f => f.RuleId, StringComparer.Ordinal)
-            .ToList();
-        return new InvoiceResult(
-            invoice.InvoiceNo,
-            invoice.InvoiceDate,
-            version.Id,
-            OutcomeOf(findings),
-            invoice.Total,
-            AmountAtRisk(invoice, findings),
-            findings);
+        return InvoiceResult.Create(invoice, version.Id, context.Findings);
+    }
+
+    /// <summary>Result for an invoice dated before every SUT version: nothing can be checked, so it is rejected.</summary>
+    public InvoiceResult NoVersion(Invoice invoice)
+    {
+        ArgumentNullException.ThrowIfNull(invoice);
+        var earliest = InvoiceContext.Date(Catalog.Versions[0].EffectiveFrom);
+        var finding = RuleDefinitions.NoVersion.CreateFinding(
+            Severity.Error, null, null, earliest, InvoiceContext.Date(invoice.InvoiceDate));
+        return InvoiceResult.Create(invoice, null, [finding]);
     }
 
     public IReadOnlyList<InvoiceResult> CheckAll(IReadOnlyList<Invoice> invoices, bool parallel = false)
@@ -129,31 +159,5 @@ public sealed class PrecheckEngine
 
         // Invoices are independent, so the batch is embarrassingly parallel; order is preserved.
         return invoices.AsParallel().AsOrdered().Select(Check).ToList();
-    }
-
-    private static InvoiceOutcome OutcomeOf(List<Finding> findings) =>
-        findings.Any(f => f.Severity == Severity.Error) ? InvoiceOutcome.Rejected
-        : findings.Any(f => f.Severity == Severity.Warning) ? InvoiceOutcome.NeedsReview
-        : InvoiceOutcome.Clean;
-
-    /// <summary>
-    /// Money SGK would not pay as submitted: the amount of every line with an Error, or the whole invoice when an
-    /// Error is invoice-level (a bad provision blocks every line).
-    /// </summary>
-    private static decimal AmountAtRisk(Invoice invoice, List<Finding> findings)
-    {
-        var errors = findings.Where(f => f.Severity == Severity.Error).ToList();
-        if (errors.Count == 0)
-        {
-            return 0m;
-        }
-
-        if (errors.Any(f => f.LineNo is null))
-        {
-            return invoice.Total;
-        }
-
-        var lines = errors.Select(f => f.LineNo!.Value).ToHashSet();
-        return invoice.Lines.Where(l => lines.Contains(l.LineNo)).Sum(l => l.Amount);
     }
 }

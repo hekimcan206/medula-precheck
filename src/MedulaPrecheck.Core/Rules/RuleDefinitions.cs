@@ -20,6 +20,28 @@ public sealed record RuleDefinition(
     bool OracleBulk,
     string Basis)
 {
+    public Finding CreateFinding(Severity severity, int? lineNo, string? code, string? expected, string? actual)
+    {
+        var fixValue = FixAction switch
+        {
+            FixAction.SetUnitPrice or FixAction.ReduceQuantity or FixAction.AddDiagnosis
+                or FixAction.ChangeProvision or FixAction.ChangeDoctor => expected,
+            _ => null,
+        };
+
+        return new Finding(
+            Id,
+            Category,
+            severity,
+            lineNo,
+            code,
+            expected,
+            actual,
+            FormatReason(lineNo, code, expected, actual),
+            FormatFix(lineNo, code, expected, actual),
+            new SuggestedFix(FixAction, lineNo, fixValue));
+    }
+
     public LocalizedText FormatReason(int? line, string? code, string? expected, string? actual) =>
         new(Format(ReasonTr, line, code, expected, actual), Format(ReasonEn, line, code, expected, actual));
 

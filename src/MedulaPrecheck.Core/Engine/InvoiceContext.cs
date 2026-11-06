@@ -46,28 +46,8 @@ public sealed class InvoiceContext
     internal void Report(RuleDefinition rule, ServiceLine? line, string? expected, string? actual) =>
         Report(rule, line?.LineNo, line?.SutCode, expected, actual);
 
-    internal void Report(RuleDefinition rule, int? lineNo, string? code, string? expected, string? actual)
-    {
-        var severity = Version.ActiveRules[rule.Id];
-        var fixValue = rule.FixAction switch
-        {
-            FixAction.SetUnitPrice or FixAction.ReduceQuantity or FixAction.AddDiagnosis
-                or FixAction.ChangeProvision or FixAction.ChangeDoctor => expected,
-            _ => null,
-        };
-
-        _findings.Add(new Finding(
-            rule.Id,
-            rule.Category,
-            severity,
-            lineNo,
-            code,
-            expected,
-            actual,
-            rule.FormatReason(lineNo, code, expected, actual),
-            rule.FormatFix(lineNo, code, expected, actual),
-            new SuggestedFix(rule.FixAction, lineNo, fixValue)));
-    }
+    internal void Report(RuleDefinition rule, int? lineNo, string? code, string? expected, string? actual) =>
+        _findings.Add(rule.CreateFinding(Version.ActiveRules[rule.Id], lineNo, code, expected, actual));
 
     // Formatting helpers shared by rules; the PL/SQL package produces byte-identical strings (parity tests).
     internal static string Date(DateOnly date) => date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
