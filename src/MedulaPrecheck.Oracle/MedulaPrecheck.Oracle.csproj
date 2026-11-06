@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedulaPrecheck.Core\MedulaPrecheck.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Schema and PL/SQL ship inside the assembly so the installer, the tests and the benchmark apply the same scripts. -->
+    <EmbeddedResource Include="..\..\db\oracle\schema\*.sql" LogicalName="MedulaPrecheck.Oracle.Schema.%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>
