@@ -1,0 +1,126 @@
+{
+  // SYNTHETIC reference data. Codes (9xxxxx), prices, limits and branch codes are invented to model the
+  // public structure of the SUT (annex lists, sex/age limits, indications, frequency limits, packages,
+  // combined-billing bans). They are not official SGK values and must not be used for real billing.
+  "branches": [
+    { "code": "1100", "nameTr": "İç Hastalıkları", "nameEn": "Internal medicine" },
+    { "code": "1200", "nameTr": "Genel Cerrahi", "nameEn": "General surgery" },
+    { "code": "1300", "nameTr": "Kadın Hastalıkları ve Doğum", "nameEn": "Obstetrics and gynaecology" },
+    { "code": "1400", "nameTr": "Üroloji", "nameEn": "Urology" },
+    { "code": "1500", "nameTr": "Çocuk Sağlığı ve Hastalıkları", "nameEn": "Paediatrics" },
+    { "code": "1600", "nameTr": "Radyoloji", "nameEn": "Radiology" },
+    { "code": "1700", "nameTr": "Anesteziyoloji ve Reanimasyon", "nameEn": "Anaesthesiology" },
+    { "code": "1800", "nameTr": "Gastroenteroloji", "nameEn": "Gastroenterology" },
+    { "code": "1900", "nameTr": "Acil Tıp", "nameEn": "Emergency medicine" },
+    { "code": "2000", "nameTr": "Kardiyoloji", "nameEn": "Cardiology" },
+    { "code": "2200", "nameTr": "Ortopedi ve Travmatoloji", "nameEn": "Orthopaedics" }
+  ],
+  "versions": [
+    {
+      "id": "SUT-2025.01",
+      "effectiveFrom": "2025-01-01",
+      "descriptionEn": "Baseline synthetic rule set.",
+      "parameters": { "examinationRepeatDays": 10, "maxInvoiceLagDays": 60 },
+      "rules": {
+        "MDL-001": "Error", "MDL-002": "Error", "MDL-003": "Error", "MDL-004": "Error",
+        "MDL-005": "Error", "MDL-006": "Error", "MDL-007": "Error",
+        "PRC-001": "Error", "PRC-002": "Error",
+        "DEM-001": "Error", "DEM-002": "Error", "DEM-003": "Error",
+        "CLN-001": "Error", "CLN-002": "Error",
+        "FRQ-001": "Error", "FRQ-002": "Error",
+        "PKG-001": "Error", "PKG-002": "Error", "PKG-003": "Error",
+        "PRV-001": "Warning"
+      },
+      "procedures": [
+        { "code": "900101", "nameTr": "Uzman hekim muayenesi", "nameEn": "Specialist outpatient examination", "kind": "Examination", "price": 120.00, "maxPerDay": 1 },
+        { "code": "900102", "nameTr": "Acil muayene", "nameEn": "Emergency examination", "kind": "Examination", "price": 95.00, "maxPerDay": 1, "allowedBranches": ["1900"] },
+        { "code": "900103", "nameTr": "Çocuk sağlığı muayenesi", "nameEn": "Paediatric examination", "kind": "Examination", "price": 130.00, "maxPerDay": 1, "maxAge": 17, "allowedBranches": ["1500"] },
+
+        { "code": "901001", "nameTr": "Hemogram", "nameEn": "Complete blood count", "kind": "Laboratory", "price": 28.50, "maxPerDay": 2 },
+        { "code": "901002", "nameTr": "HbA1c", "nameEn": "HbA1c", "kind": "Laboratory", "price": 64.00, "maxPerDay": 1, "frequency": { "count": 4, "days": 365 }, "requiredIcdPrefixes": ["E10", "E11", "E13", "O24", "R73"] },
+        { "code": "901003", "nameTr": "PSA, total", "nameEn": "PSA, total", "kind": "Laboratory", "price": 72.00, "maxPerDay": 1, "gender": "Male", "minAge": 40, "frequency": { "count": 1, "days": 180 } },
+        { "code": "901004", "nameTr": "Beta-hCG", "nameEn": "Beta-hCG", "kind": "Laboratory", "price": 58.00, "maxPerDay": 1, "gender": "Female", "minAge": 10, "maxAge": 60 },
+        { "code": "901005", "nameTr": "TSH", "nameEn": "TSH", "kind": "Laboratory", "price": 46.00, "maxPerDay": 1, "frequency": { "count": 2, "days": 90 } },
+        { "code": "901006", "nameTr": "Açlık kan şekeri", "nameEn": "Fasting glucose", "kind": "Laboratory", "price": 12.40, "maxPerDay": 3 },
+        { "code": "901007", "nameTr": "Kreatinin", "nameEn": "Creatinine", "kind": "Laboratory", "price": 11.20, "maxPerDay": 2 },
+        { "code": "901008", "nameTr": "Troponin I", "nameEn": "Troponin I", "kind": "Laboratory", "price": 95.00, "maxPerDay": 3, "allowedBranches": ["1100", "1900", "2000"] },
+        { "code": "901009", "nameTr": "Yenidoğan metabolik tarama", "nameEn": "Newborn metabolic screening", "kind": "Laboratory", "price": 140.00, "maxPerDay": 1, "maxAge": 0, "frequency": { "count": 1, "days": 365 } },
+        { "code": "901010", "nameTr": "Vitamin B12", "nameEn": "Vitamin B12", "kind": "Laboratory", "price": 52.00, "maxPerDay": 1, "frequency": { "count": 1, "days": 90 }, "requiredIcdPrefixes": ["D51", "D52", "D53", "E53", "G63", "K90"] },
+
+        { "code": "902001", "nameTr": "Akciğer grafisi (PA)", "nameEn": "Chest X-ray (PA)", "kind": "Imaging", "price": 85.00, "maxPerDay": 2 },
+        { "code": "902002", "nameTr": "Mamografi (bilateral)", "nameEn": "Bilateral mammography", "kind": "Imaging", "price": 260.00, "maxPerDay": 1, "gender": "Female", "minAge": 35, "frequency": { "count": 1, "days": 365 }, "allowedBranches": ["1600"] },
+        { "code": "902003", "nameTr": "Batın ultrasonografi", "nameEn": "Abdominal ultrasound", "kind": "Imaging", "price": 210.00, "maxPerDay": 1, "allowedBranches": ["1600"] },
+        { "code": "902004", "nameTr": "Obstetrik ultrasonografi", "nameEn": "Obstetric ultrasound", "kind": "Imaging", "price": 230.00, "maxPerDay": 1, "gender": "Female", "requiredIcdPrefixes": ["O", "Z32", "Z33", "Z34", "Z35", "Z36"], "allowedBranches": ["1300", "1600"] },
+        { "code": "902005", "nameTr": "Beyin BT", "nameEn": "Brain CT", "kind": "Imaging", "price": 540.00, "maxPerDay": 1, "allowedBranches": ["1600"] },
+        { "code": "902006", "nameTr": "Kemik dansitometrisi (DEXA)", "nameEn": "Bone densitometry (DEXA)", "kind": "Imaging", "price": 380.00, "maxPerDay": 1, "minAge": 40, "frequency": { "count": 1, "days": 730 }, "allowedBranches": ["1600"] },
+
+        { "code": "903001", "nameTr": "Kolonoskopi", "nameEn": "Colonoscopy", "kind": "Procedure", "price": 1450.00, "maxPerDay": 1, "allowedBranches": ["1200", "1800"] },
+        { "code": "903002", "nameTr": "Sedasyon", "nameEn": "Procedural sedation", "kind": "Procedure", "price": 420.00, "maxPerDay": 1, "allowedBranches": ["1700", "1800"] },
+        { "code": "903003", "nameTr": "Genel anestezi (saat)", "nameEn": "General anaesthesia (per hour)", "kind": "Procedure", "price": 980.00, "maxPerDay": 6, "allowedBranches": ["1700"] },
+        { "code": "903004", "nameTr": "Prostat biyopsisi", "nameEn": "Prostate biopsy", "kind": "Procedure", "price": 1850.00, "maxPerDay": 1, "gender": "Male", "requiredIcdPrefixes": ["C61", "N40", "R97"], "allowedBranches": ["1400"] },
+        { "code": "903005", "nameTr": "Sezaryen", "nameEn": "Caesarean section", "kind": "Procedure", "price": 9800.00, "maxPerDay": 1, "gender": "Female", "minAge": 12, "maxAge": 55, "inpatientOnly": true, "requiredIcdPrefixes": ["O"], "allowedBranches": ["1300"] },
+        { "code": "903006", "nameTr": "Normal doğum", "nameEn": "Vaginal delivery", "kind": "Procedure", "price": 6400.00, "maxPerDay": 1, "gender": "Female", "minAge": 12, "maxAge": 55, "inpatientOnly": true, "requiredIcdPrefixes": ["O"], "allowedBranches": ["1300"] },
+        { "code": "903007", "nameTr": "Apendektomi (paket)", "nameEn": "Appendectomy (package)", "kind": "Package", "price": 14200.00, "maxPerDay": 1, "inpatientOnly": true, "requiredIcdPrefixes": ["K35", "K36", "K37"], "allowedBranches": ["1200"], "packageContents": ["901001", "901006", "901007", "902003", "903003", "905001"] },
+        { "code": "903008", "nameTr": "Laparoskopik kolesistektomi (paket)", "nameEn": "Laparoscopic cholecystectomy (package)", "kind": "Package", "price": 18600.00, "maxPerDay": 1, "inpatientOnly": true, "requiredIcdPrefixes": ["K80", "K81"], "allowedBranches": ["1200"], "packageContents": ["901001", "901006", "902003", "903003", "905001", "905002"] },
+        { "code": "903009", "nameTr": "Elektrokardiyografi (EKG)", "nameEn": "Electrocardiogram (ECG)", "kind": "Procedure", "price": 42.00, "maxPerDay": 3 },
+        { "code": "903010", "nameTr": "Efor testi", "nameEn": "Exercise stress test", "kind": "Procedure", "price": 480.00, "maxPerDay": 1, "frequency": { "count": 2, "days": 365 }, "allowedBranches": ["2000"] },
+        { "code": "903011", "nameTr": "Alçı uygulaması", "nameEn": "Cast application", "kind": "Procedure", "price": 320.00, "maxPerDay": 2, "allowedBranches": ["1900", "2200"] },
+
+        { "code": "904001", "nameTr": "Yatak günü (servis)", "nameEn": "Ward bed-day", "kind": "BedDay", "price": 650.00, "inpatientOnly": true },
+        { "code": "904002", "nameTr": "Yoğun bakım günü (3. düzey)", "nameEn": "Intensive care day (level 3)", "kind": "BedDay", "price": 4200.00, "inpatientOnly": true },
+
+        { "code": "905001", "nameTr": "Serum seti", "nameEn": "IV infusion set", "kind": "Consumable", "price": 18.00, "maxPerDay": 6 },
+        { "code": "905002", "nameTr": "Trokar seti", "nameEn": "Laparoscopic trocar set", "kind": "Consumable", "price": 2400.00, "maxPerDay": 1, "inpatientOnly": true }
+      ],
+      "incompatiblePairs": [
+        { "primary": "903003", "secondary": "903002" },
+        { "primary": "900102", "secondary": "900101" },
+        { "primary": "903005", "secondary": "903006" }
+      ],
+      "diagnosisGender": [
+        { "from": "O00", "to": "O9A", "gender": "Female" },
+        { "from": "C51", "to": "C58", "gender": "Female" },
+        { "from": "N70", "to": "N98", "gender": "Female" },
+        { "from": "C60", "to": "C63", "gender": "Male" },
+        { "from": "N40", "to": "N51", "gender": "Male" }
+      ]
+    },
+    {
+      "id": "SUT-2025.07",
+      "effectiveFrom": "2025-07-01",
+      "inherits": "SUT-2025.01",
+      "descriptionEn": "Mid-year amendment: laboratory price update, tighter HbA1c frequency, Vitamin D added, late-invoice check introduced.",
+      "rules": { "ADM-001": "Warning" },
+      "procedureChanges": {
+        "901001": { "price": 30.80 },
+        "901002": { "price": 69.10, "frequency": { "count": 2, "days": 180 } },
+        "901005": { "price": 49.70 },
+        "901006": { "price": 13.40 },
+        "901007": { "price": 12.10 }
+      },
+      "procedures": [
+        { "code": "901011", "nameTr": "Vitamin D (25-OH)", "nameEn": "Vitamin D (25-OH)", "kind": "Laboratory", "price": 88.00, "maxPerDay": 1, "frequency": { "count": 1, "days": 180 }, "requiredIcdPrefixes": ["E55", "E83", "M80", "M81"] }
+      ]
+    },
+    {
+      "id": "SUT-2026.01",
+      "effectiveFrom": "2026-01-01",
+      "inherits": "SUT-2025.07",
+      "descriptionEn": "Annual amendment: examination fee update, mammography screening age raised, ECG absorbed into stress test, bed-day check, accident coding becomes blocking.",
+      "parameters": { "examinationRepeatDays": 10, "maxInvoiceLagDays": 45 },
+      "rules": { "PKG-004": "Error", "PRV-001": "Error" },
+      "procedureChanges": {
+        "900101": { "price": 135.00 },
+        "900102": { "price": 105.00 },
+        "902002": { "minAge": 40 }
+      },
+      "removedProcedures": ["901009"],
+      "procedures": [
+        { "code": "901012", "nameTr": "Genişletilmiş yenidoğan taraması", "nameEn": "Extended newborn screening", "kind": "Laboratory", "price": 185.00, "maxPerDay": 1, "maxAge": 0, "frequency": { "count": 1, "days": 365 } }
+      ],
+      "incompatiblePairs": [
+        { "primary": "903010", "secondary": "903009" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>MedulaPrecheck</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- One source of truth for SUT reference data: the .NET engine reads it and the Oracle loader seeds it. -->
+    <EmbeddedResource Include="ReferenceData\sut-catalog.json" LogicalName="MedulaPrecheck.sut-catalog.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="MedulaPrecheck.UnitTests" />
+  </ItemGroup>
+
+</Project>
