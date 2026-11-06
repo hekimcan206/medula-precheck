@@ -1,0 +1,762 @@
+{
+  "generatedAt": "2026-11-06T00:00:00+00:00",
+  "engine": "dotnet-engine",
+  "summary": {
+    "invoices": 40,
+    "clean": 26,
+    "needsReview": 0,
+    "rejected": 14,
+    "findings": 14,
+    "totalAmount": 298373.90,
+    "amountAtRisk": 43765.80
+  },
+  "byRule": [
+    {
+      "ruleId": "CLN-002",
+      "titleTr": "Hekim branşı yetkili değil",
+      "titleEn": "Physician specialty not authorised",
+      "count": 1
+    },
+    {
+      "ruleId": "DEM-002",
+      "titleTr": "İşlem hasta yaşına uygun değil",
+      "titleEn": "Procedure not valid for the patient's age",
+      "count": 1
+    },
+    {
+      "ruleId": "DEM-003",
+      "titleTr": "Tanı hasta cinsiyetine uygun değil",
+      "titleEn": "Diagnosis not valid for the patient's sex",
+      "count": 1
+    },
+    {
+      "ruleId": "FRQ-002",
+      "titleTr": "10 gün içinde aynı branşta muayene",
+      "titleEn": "Repeat examination in the same specialty",
+      "count": 1
+    },
+    {
+      "ruleId": "MDL-001",
+      "titleTr": "Takip numarası geçersiz",
+      "titleEn": "Invalid provision tracking number",
+      "count": 1
+    },
+    {
+      "ruleId": "MDL-002",
+      "titleTr": "Hizmet tarihi provizyon dönemi dışında",
+      "titleEn": "Service date outside the provision period",
+      "count": 1
+    },
+    {
+      "ruleId": "MDL-003",
+      "titleTr": "Fatura tarihi hizmetten önce",
+      "titleEn": "Invoice dated before the service or discharge",
+      "count": 1
+    },
+    {
+      "ruleId": "MDL-004",
+      "titleTr": "SUT kodu bu sürümde yok",
+      "titleEn": "SUT code not in the version in force",
+      "count": 1
+    },
+    {
+      "ruleId": "MDL-006",
+      "titleTr": "Hekim bilgisi eksik/geçersiz",
+      "titleEn": "Physician missing or invalid",
+      "count": 1
+    },
+    {
+      "ruleId": "MDL-007",
+      "titleTr": "Tanı kodlaması hatalı",
+      "titleEn": "Diagnosis coding invalid",
+      "count": 1
+    },
+    {
+      "ruleId": "PKG-001",
+      "titleTr": "Paket kapsamındaki hizmet ayrıca faturalandırılmış",
+      "titleEn": "Service included in a package billed separately",
+      "count": 1
+    },
+    {
+      "ruleId": "PKG-003",
+      "titleTr": "Yatarak tedavi gerektiren işlem ayaktan faturalandırılmış",
+      "titleEn": "Inpatient-only service on an outpatient provision",
+      "count": 1
+    },
+    {
+      "ruleId": "PRC-001",
+      "titleTr": "Birim fiyat tarifeden farklı",
+      "titleEn": "Unit price differs from the tariff",
+      "count": 1
+    },
+    {
+      "ruleId": "PRC-002",
+      "titleTr": "Günlük adet sınırı aşıldı",
+      "titleEn": "Daily quantity limit exceeded",
+      "count": 1
+    }
+  ],
+  "invoices": [
+    {
+      "invoiceNo": "FT2511-000001",
+      "invoiceDate": "2025-11-09",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Rejected",
+      "total": 835.40,
+      "amountAtRisk": 650.00,
+      "findings": [
+        {
+          "ruleId": "PKG-003",
+          "category": "Package",
+          "severity": "Error",
+          "lineNo": 4,
+          "sutCode": "904001",
+          "expected": "Inpatient",
+          "actual": "Outpatient",
+          "reason": {
+            "tr": "Satır 4 (904001) yalnızca yatarak tedavide faturalandırılır; provizyon Outpatient.",
+            "en": "Line 4 (904001) is billable in inpatient care only; the provision is Outpatient."
+          },
+          "suggestion": {
+            "tr": "Provizyon tedavi türünü Inpatient olarak düzeltin veya hizmeti yatış provizyonuna taşıyın.",
+            "en": "Change the provision treatment type to Inpatient or move the service to the inpatient provision."
+          },
+          "fix": {
+            "action": "ChangeProvision",
+            "lineNo": 4,
+            "value": "Inpatient"
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2508-000002",
+      "invoiceDate": "2025-08-03",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 21242.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2601-000003",
+      "invoiceDate": "2026-01-12",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Rejected",
+      "total": 235.00,
+      "amountAtRisk": 100,
+      "findings": [
+        {
+          "ruleId": "MDL-004",
+          "category": "Structural",
+          "severity": "Error",
+          "lineNo": 2,
+          "sutCode": "999999",
+          "expected": "SUT-2026.01",
+          "actual": "999999",
+          "reason": {
+            "tr": "Satır 2: 999999 kodu SUT-2026.01 sürümünde tanımlı değil.",
+            "en": "Line 2: code 999999 is not defined in SUT version SUT-2026.01."
+          },
+          "suggestion": {
+            "tr": "Kodu SUT-2026.01 listesindeki güncel karşılığıyla değiştirin; kaldırılmış kodlar faturalandırılamaz.",
+            "en": "Replace the code with its current equivalent in SUT-2026.01; withdrawn codes cannot be billed."
+          },
+          "fix": {
+            "action": "CorrectField",
+            "lineNo": 2
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2601-000004",
+      "invoiceDate": "2026-01-13",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 556.40,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2509-000005",
+      "invoiceDate": "2025-09-13",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Rejected",
+      "total": 190.00,
+      "amountAtRisk": 190.00,
+      "findings": [
+        {
+          "ruleId": "DEM-003",
+          "category": "Demographic",
+          "severity": "Error",
+          "expected": "Female",
+          "actual": "O80.0",
+          "reason": {
+            "tr": "Tanı O80.0 yalnızca Female hastalarda kullanılabilir.",
+            "en": "Diagnosis O80.0 can only be used for Female patients."
+          },
+          "suggestion": {
+            "tr": "Tanı kodunu veya hasta cinsiyetini düzeltin.",
+            "en": "Correct the diagnosis code or the patient's recorded sex."
+          },
+          "fix": {
+            "action": "CorrectDiagnosis"
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2601-000006",
+      "invoiceDate": "2026-01-22",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 135.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2511-000007",
+      "invoiceDate": "2025-11-22",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 1970.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2511-000008",
+      "invoiceDate": "2025-11-04",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Rejected",
+      "total": 20550.00,
+      "amountAtRisk": 20550.00,
+      "findings": [
+        {
+          "ruleId": "MDL-007",
+          "category": "Structural",
+          "severity": "Error",
+          "expected": "A00.0",
+          "actual": "INVALID",
+          "reason": {
+            "tr": "Tanı 'INVALID' ICD-10 biçimine uymuyor veya ana tanı sayısı hatalı (A00.0).",
+            "en": "Diagnosis 'INVALID' is not valid ICD-10 or the primary-diagnosis count is wrong (A00.0)."
+          },
+          "suggestion": {
+            "tr": "Tanıyı ICD-10 biçiminde (ör. E11.9) yazın ve tam olarak bir ana tanı işaretleyin.",
+            "en": "Write the diagnosis in ICD-10 form (e.g. E11.9) and mark exactly one primary diagnosis."
+          },
+          "fix": {
+            "action": "CorrectDiagnosis"
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2601-000009",
+      "invoiceDate": "2026-01-14",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 21200.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2603-000010",
+      "invoiceDate": "2026-03-13",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Rejected",
+      "total": 667.00,
+      "amountAtRisk": 270.00,
+      "findings": [
+        {
+          "ruleId": "PRC-002",
+          "category": "Pricing",
+          "severity": "Error",
+          "lineNo": 1,
+          "sutCode": "900101",
+          "expected": "1",
+          "actual": "2",
+          "reason": {
+            "tr": "Satır 1 (900101) aynı gün toplam 2 adet; günlük sınır 1.",
+            "en": "Line 1 (900101): 2 units on one day; the daily limit is 1."
+          },
+          "suggestion": {
+            "tr": "Aynı gündeki toplam adedi 1 adede indirin.",
+            "en": "Reduce the total for that day to 1 unit(s)."
+          },
+          "fix": {
+            "action": "ReduceQuantity",
+            "lineNo": 1,
+            "value": "1"
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2508-000011",
+      "invoiceDate": "2025-08-24",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 236.20,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2512-000012",
+      "invoiceDate": "2025-12-24",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 330.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2510-000013",
+      "invoiceDate": "2025-10-08",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 757.10,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2510-000014",
+      "invoiceDate": "2025-10-02",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 19942.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2601-000015",
+      "invoiceDate": "2026-01-09",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Rejected",
+      "total": 135.00,
+      "amountAtRisk": 135.00,
+      "findings": [
+        {
+          "ruleId": "FRQ-002",
+          "category": "Frequency",
+          "severity": "Error",
+          "lineNo": 1,
+          "sutCode": "900101",
+          "expected": "10",
+          "actual": "2025-12-26",
+          "reason": {
+            "tr": "Satır 1 (900101) muayenesi, 2025-12-26 tarihindeki aynı branş muayenesinden sonraki 10 gün içinde.",
+            "en": "Line 1 (900101): examination within 10 days of a same-specialty examination on 2025-12-26."
+          },
+          "suggestion": {
+            "tr": "Muayene satırını çıkarın; kontrol muayenesi ayrıca faturalandırılmaz (ek işlemler faturalandırılabilir).",
+            "en": "Remove the examination line; a follow-up visit is not billed again (additional procedures still are)."
+          },
+          "fix": {
+            "action": "RemoveLine",
+            "lineNo": 1
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2602-000016",
+      "invoiceDate": "2026-02-01",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 345.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2512-000017",
+      "invoiceDate": "2025-12-06",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Rejected",
+      "total": 15390.00,
+      "amountAtRisk": 540.00,
+      "findings": [
+        {
+          "ruleId": "CLN-002",
+          "category": "Clinical",
+          "severity": "Error",
+          "lineNo": 3,
+          "sutCode": "902005",
+          "expected": "1600",
+          "actual": "1200",
+          "reason": {
+            "tr": "Satır 3 (902005) hekim branşı 1200; yetkili branşlar: 1600.",
+            "en": "Line 3 (902005) was performed by specialty 1200; authorised specialties: 1600."
+          },
+          "suggestion": {
+            "tr": "Satırı yetkili branştaki (1600) hekime bağlayın veya istem/konsültasyon kaydını ekleyin.",
+            "en": "Attribute the line to a physician in 1600 or attach the request/consultation record."
+          },
+          "fix": {
+            "action": "ChangeDoctor",
+            "lineNo": 3,
+            "value": "1600"
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2511-000018",
+      "invoiceDate": "2025-11-21",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 238.80,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2512-000019",
+      "invoiceDate": "2025-12-16",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 19292.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2510-000020",
+      "invoiceDate": "2025-10-13",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 132.10,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2602-000021",
+      "invoiceDate": "2026-02-05",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 15500.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2508-000022",
+      "invoiceDate": "2025-08-03",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 11130.80,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2602-000023",
+      "invoiceDate": "2026-02-08",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 1585.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2507-000024",
+      "invoiceDate": "2025-07-31",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 11130.80,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2601-000025",
+      "invoiceDate": "2026-01-30",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 1905.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2512-000026",
+      "invoiceDate": "2025-12-16",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Rejected",
+      "total": 120.50,
+      "amountAtRisk": 95.00,
+      "findings": [
+        {
+          "ruleId": "MDL-002",
+          "category": "Structural",
+          "severity": "Error",
+          "lineNo": 1,
+          "sutCode": "900102",
+          "expected": "2025-12-03..",
+          "actual": "2025-12-02",
+          "reason": {
+            "tr": "Satır 1 (900102) hizmet tarihi 2025-12-02, provizyon dönemi 2025-12-03.. dışında.",
+            "en": "Line 1 (900102) is dated 2025-12-02, outside the provision period 2025-12-03..."
+          },
+          "suggestion": {
+            "tr": "Hizmet tarihini 2025-12-03.. aralığına düzeltin ya da hizmeti ait olduğu provizyona taşıyın.",
+            "en": "Correct the service date into 2025-12-03.. or move the service to the provision it belongs to."
+          },
+          "fix": {
+            "action": "CorrectField",
+            "lineNo": 1
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2510-000027",
+      "invoiceDate": "2025-10-07",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 7080.80,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2510-000028",
+      "invoiceDate": "2025-10-27",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Rejected",
+      "total": 552.00,
+      "amountAtRisk": 130.00,
+      "findings": [
+        {
+          "ruleId": "PRC-001",
+          "category": "Pricing",
+          "severity": "Error",
+          "lineNo": 1,
+          "sutCode": "900101",
+          "expected": "120.00",
+          "actual": "130.00",
+          "reason": {
+            "tr": "Satır 1 (900101) birim fiyatı 130.00 TL, geçerli tarife 120.00 TL.",
+            "en": "Line 1 (900101) is priced 130.00 TRY; the tariff in force is 120.00 TRY."
+          },
+          "suggestion": {
+            "tr": "Birim fiyatı 120.00 TL olarak düzeltin.",
+            "en": "Set the unit price to 120.00 TRY."
+          },
+          "fix": {
+            "action": "SetUnitPrice",
+            "lineNo": 1,
+            "value": "120.00"
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2602-000029",
+      "invoiceDate": "2026-02-18",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 11130.80,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2508-000030",
+      "invoiceDate": "2025-08-07",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 108.40,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2512-000031",
+      "invoiceDate": "2025-12-10",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Rejected",
+      "total": 1570.00,
+      "amountAtRisk": 1570.00,
+      "findings": [
+        {
+          "ruleId": "MDL-001",
+          "category": "Structural",
+          "severity": "Error",
+          "expected": "[0-9A-Z]{7,10}",
+          "actual": "tk-93",
+          "reason": {
+            "tr": "Takip numarası 'tk-93' biçim olarak geçersiz; MEDULA hizmet kaydını kabul etmez.",
+            "en": "Tracking number 'tk-93' is malformed; MEDULA will not accept the service record."
+          },
+          "suggestion": {
+            "tr": "Provizyonu MEDULA'dan yeniden sorgulayıp [0-9A-Z]{7,10} biçimindeki takip numarasını faturaya yazın.",
+            "en": "Re-query the provision in MEDULA and put the tracking number ([0-9A-Z]{7,10}) on the invoice."
+          },
+          "fix": {
+            "action": "ChangeProvision",
+            "value": "[0-9A-Z]{7,10}"
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2601-000032",
+      "invoiceDate": "2026-01-01",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 135.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2603-000033",
+      "invoiceDate": "2026-03-01",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Rejected",
+      "total": 21200.00,
+      "amountAtRisk": 18600.00,
+      "findings": [
+        {
+          "ruleId": "MDL-006",
+          "category": "Structural",
+          "severity": "Error",
+          "lineNo": 1,
+          "sutCode": "903008",
+          "expected": "\\d{6}",
+          "actual": "000000",
+          "reason": {
+            "tr": "Satır 1 (903008) hekim tescil no '000000' faturadaki hekim listesinde yok veya geçersiz.",
+            "en": "Line 1 (903008): physician registration '000000' is not on the invoice or is malformed."
+          },
+          "suggestion": {
+            "tr": "Hizmeti yapan hekimi (\\d{6} biçiminde tescil no) faturaya ekleyin veya satırı doğru hekime bağlayın.",
+            "en": "Add the performing physician (registration \\d{6}) to the invoice or link the line to the right one."
+          },
+          "fix": {
+            "action": "ChangeDoctor",
+            "lineNo": 1,
+            "value": "\\d{6}"
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2511-000034",
+      "invoiceDate": "2025-11-23",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 17492.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2510-000035",
+      "invoiceDate": "2025-10-12",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Clean",
+      "total": 15500.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2602-000036",
+      "invoiceDate": "2026-02-05",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Rejected",
+      "total": 16180.80,
+      "amountAtRisk": 30.80,
+      "findings": [
+        {
+          "ruleId": "PKG-001",
+          "category": "Package",
+          "severity": "Error",
+          "lineNo": 3,
+          "sutCode": "901001",
+          "expected": "903007",
+          "reason": {
+            "tr": "Satır 3 (901001) 903007 paketinin kapsamında; ayrıca faturalandırılamaz.",
+            "en": "Line 3 (901001) is included in package 903007 and cannot be billed separately."
+          },
+          "suggestion": {
+            "tr": "Satır 3'i çıkarın; bedel 903007 paket fiyatına dahildir.",
+            "en": "Remove line 3; its cost is included in the price of package 903007."
+          },
+          "fix": {
+            "action": "RemoveLine",
+            "lineNo": 3
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2602-000037",
+      "invoiceDate": "2026-02-14",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 318.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2603-000038",
+      "invoiceDate": "2026-03-04",
+      "sutVersion": "SUT-2026.01",
+      "outcome": "Clean",
+      "total": 19250.00,
+      "amountAtRisk": 0,
+      "findings": []
+    },
+    {
+      "invoiceNo": "FT2508-000039",
+      "invoiceDate": "2025-08-12",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Rejected",
+      "total": 21340.00,
+      "amountAtRisk": 140.00,
+      "findings": [
+        {
+          "ruleId": "DEM-002",
+          "category": "Demographic",
+          "severity": "Error",
+          "lineNo": 3,
+          "sutCode": "901009",
+          "expected": "-0",
+          "actual": "21",
+          "reason": {
+            "tr": "Satır 3 (901009) -0 yaş aralığında faturalandırılır; hasta 21 yaşında.",
+            "en": "Line 3 (901009) is billable for ages -0; the patient is 21."
+          },
+          "suggestion": {
+            "tr": "Doğum tarihini doğrulayın; yaş aralığı dışındaki uygulama için tıbbi gerekçe raporu ekleyin veya satırı çıkarın.",
+            "en": "Verify the birth date; attach a medical justification for an out-of-range use or remove the line."
+          },
+          "fix": {
+            "action": "ReviewClinically",
+            "lineNo": 3
+          }
+        }
+      ]
+    },
+    {
+      "invoiceNo": "FT2510-000040",
+      "invoiceDate": "2025-09-22",
+      "sutVersion": "SUT-2025.07",
+      "outcome": "Rejected",
+      "total": 765.00,
+      "amountAtRisk": 765.00,
+      "findings": [
+        {
+          "ruleId": "MDL-003",
+          "category": "Structural",
+          "severity": "Error",
+          "expected": "2025-09-23",
+          "actual": "2025-09-22",
+          "reason": {
+            "tr": "Fatura tarihi 2025-09-22, son hizmet/taburcu tarihi 2025-09-23 öncesinde.",
+            "en": "Invoice date 2025-09-22 precedes the last service / discharge date 2025-09-23."
+          },
+          "suggestion": {
+            "tr": "Faturayı 2025-09-23 veya sonrasına tarihleyin; yatan hastada taburcu olmadan fatura kesmeyin.",
+            "en": "Date the invoice on or after 2025-09-23; do not invoice an inpatient stay before discharge."
+          },
+          "fix": {
+            "action": "ChangeInvoiceDate"
+          }
+        }
+      ]
+    }
+  ]
+}

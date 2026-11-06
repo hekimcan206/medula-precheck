@@ -1,0 +1,164 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEDULA pre-check report</title><style>
+:root{--fg:#1d2433;--muted:#5b6475;--line:#d9dee7;--bg:#f7f8fa;--err:#b42318;--warn:#b54708;--ok:#067647}
+body{font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--fg);background:var(--bg);margin:0;padding:24px 16px}
+main{max-width:1100px;margin:0 auto}h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:28px 0 8px}
+.meta{color:var(--muted);margin:0 0 16px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px}.card b{display:block;font-size:20px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);margin-bottom:8px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#eef1f5;font-weight:600}
+td.n{text-align:right;font-variant-numeric:tabular-nums}.en{color:var(--muted);display:block}
+.sev-Error{color:var(--err);font-weight:600}.sev-Warning{color:var(--warn);font-weight:600}.o-Clean{color:var(--ok)}
+details{background:#fff;border:1px solid var(--line);border-radius:8px;margin:6px 0;padding:6px 10px}summary{cursor:pointer}
+code{font:12px ui-monospace,Consolas,monospace}.scroll{overflow-x:auto}
+</style></head><body><main>
+<h1>MEDULA ön kontrol raporu <span class="en" style="display:inline">/ pre-check report</span></h1>
+<p class="meta">Generated 2026-11-06 00:00 UTC by <code>dotnet-engine</code>. All data is synthetic.</p>
+<div class="cards">
+<div class="card">Invoices / Fatura<b>40</b></div>
+<div class="card">Clean / Temiz<b>26</b></div>
+<div class="card">Needs review / İnceleme<b>0</b></div>
+<div class="card">Would be rejected / Ret<b>14</b></div>
+<div class="card">Total / Toplam (TRY)<b>298,373.90</b></div>
+<div class="card">At risk / Risk (TRY)<b>43,765.80</b></div>
+</div>
+<h2>Findings by rule / Kurala göre bulgular</h2><div class="scroll"><table><tr><th>Rule</th><th>Kural / Rule</th><th>Count</th></tr>
+<tr><td><code>CLN-002</code></td><td>Hekim branşı yetkili değil<span class="en">Physician specialty not authorised</span></td><td class="n">1</td></tr>
+<tr><td><code>DEM-002</code></td><td>İşlem hasta yaşına uygun değil<span class="en">Procedure not valid for the patient&#39;s age</span></td><td class="n">1</td></tr>
+<tr><td><code>DEM-003</code></td><td>Tanı hasta cinsiyetine uygun değil<span class="en">Diagnosis not valid for the patient&#39;s sex</span></td><td class="n">1</td></tr>
+<tr><td><code>FRQ-002</code></td><td>10 g&#252;n i&#231;inde aynı branşta muayene<span class="en">Repeat examination in the same specialty</span></td><td class="n">1</td></tr>
+<tr><td><code>MDL-001</code></td><td>Takip numarası ge&#231;ersiz<span class="en">Invalid provision tracking number</span></td><td class="n">1</td></tr>
+<tr><td><code>MDL-002</code></td><td>Hizmet tarihi provizyon d&#246;nemi dışında<span class="en">Service date outside the provision period</span></td><td class="n">1</td></tr>
+<tr><td><code>MDL-003</code></td><td>Fatura tarihi hizmetten &#246;nce<span class="en">Invoice dated before the service or discharge</span></td><td class="n">1</td></tr>
+<tr><td><code>MDL-004</code></td><td>SUT kodu bu s&#252;r&#252;mde yok<span class="en">SUT code not in the version in force</span></td><td class="n">1</td></tr>
+<tr><td><code>MDL-006</code></td><td>Hekim bilgisi eksik/ge&#231;ersiz<span class="en">Physician missing or invalid</span></td><td class="n">1</td></tr>
+<tr><td><code>MDL-007</code></td><td>Tanı kodlaması hatalı<span class="en">Diagnosis coding invalid</span></td><td class="n">1</td></tr>
+<tr><td><code>PKG-001</code></td><td>Paket kapsamındaki hizmet ayrıca faturalandırılmış<span class="en">Service included in a package billed separately</span></td><td class="n">1</td></tr>
+<tr><td><code>PKG-003</code></td><td>Yatarak tedavi gerektiren işlem ayaktan faturalandırılmış<span class="en">Inpatient-only service on an outpatient provision</span></td><td class="n">1</td></tr>
+<tr><td><code>PRC-001</code></td><td>Birim fiyat tarifeden farklı<span class="en">Unit price differs from the tariff</span></td><td class="n">1</td></tr>
+<tr><td><code>PRC-002</code></td><td>G&#252;nl&#252;k adet sınırı aşıldı<span class="en">Daily quantity limit exceeded</span></td><td class="n">1</td></tr>
+</table></div><h2>Invoices / Faturalar</h2>
+<details open><summary><code>FT2511-000001</code> · <span class="o-Rejected">Rejected</span> · SUT-2025.07 · total 835.40 · at risk 650.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>PKG-003</code><br><span class="sev-Error">Error</span></td><td class="n">4</td><td>Satır 4 (904001) yalnızca yatarak tedavide faturalandırılır; provizyon Outpatient.<span class="en">Line 4 (904001) is billable in inpatient care only; the provision is Outpatient.</span></td><td>Provizyon tedavi t&#252;r&#252;n&#252; Inpatient olarak d&#252;zeltin veya hizmeti yatış provizyonuna taşıyın.<span class="en">Change the provision treatment type to Inpatient or move the service to the inpatient provision.</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2508-000002</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 21,242.00 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2601-000003</code> · <span class="o-Rejected">Rejected</span> · SUT-2026.01 · total 235.00 · at risk 100.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>MDL-004</code><br><span class="sev-Error">Error</span></td><td class="n">2</td><td>Satır 2: 999999 kodu SUT-2026.01 s&#252;r&#252;m&#252;nde tanımlı değil.<span class="en">Line 2: code 999999 is not defined in SUT version SUT-2026.01.</span></td><td>Kodu SUT-2026.01 listesindeki g&#252;ncel karşılığıyla değiştirin; kaldırılmış kodlar faturalandırılamaz.<span class="en">Replace the code with its current equivalent in SUT-2026.01; withdrawn codes cannot be billed.</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2601-000004</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 556.40 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2509-000005</code> · <span class="o-Rejected">Rejected</span> · SUT-2025.07 · total 190.00 · at risk 190.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>DEM-003</code><br><span class="sev-Error">Error</span></td><td class="n">-</td><td>Tanı O80.0 yalnızca Female hastalarda kullanılabilir.<span class="en">Diagnosis O80.0 can only be used for Female patients.</span></td><td>Tanı kodunu veya hasta cinsiyetini d&#252;zeltin.<span class="en">Correct the diagnosis code or the patient&#39;s recorded sex.</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2601-000006</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 135.00 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2511-000007</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 1,970.00 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2511-000008</code> · <span class="o-Rejected">Rejected</span> · SUT-2025.07 · total 20,550.00 · at risk 20,550.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>MDL-007</code><br><span class="sev-Error">Error</span></td><td class="n">-</td><td>Tanı &#39;INVALID&#39; ICD-10 bi&#231;imine uymuyor veya ana tanı sayısı hatalı (A00.0).<span class="en">Diagnosis &#39;INVALID&#39; is not valid ICD-10 or the primary-diagnosis count is wrong (A00.0).</span></td><td>Tanıyı ICD-10 bi&#231;iminde (&#246;r. E11.9) yazın ve tam olarak bir ana tanı işaretleyin.<span class="en">Write the diagnosis in ICD-10 form (e.g. E11.9) and mark exactly one primary diagnosis.</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2601-000009</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 21,200.00 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2603-000010</code> · <span class="o-Rejected">Rejected</span> · SUT-2026.01 · total 667.00 · at risk 270.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>PRC-002</code><br><span class="sev-Error">Error</span></td><td class="n">1</td><td>Satır 1 (900101) aynı g&#252;n toplam 2 adet; g&#252;nl&#252;k sınır 1.<span class="en">Line 1 (900101): 2 units on one day; the daily limit is 1.</span></td><td>Aynı g&#252;ndeki toplam adedi 1 adede indirin.<span class="en">Reduce the total for that day to 1 unit(s).</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2508-000011</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 236.20 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2512-000012</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 330.00 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2510-000013</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 757.10 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2510-000014</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 19,942.00 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2601-000015</code> · <span class="o-Rejected">Rejected</span> · SUT-2026.01 · total 135.00 · at risk 135.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>FRQ-002</code><br><span class="sev-Error">Error</span></td><td class="n">1</td><td>Satır 1 (900101) muayenesi, 2025-12-26 tarihindeki aynı branş muayenesinden sonraki 10 g&#252;n i&#231;inde.<span class="en">Line 1 (900101): examination within 10 days of a same-specialty examination on 2025-12-26.</span></td><td>Muayene satırını &#231;ıkarın; kontrol muayenesi ayrıca faturalandırılmaz (ek işlemler faturalandırılabilir).<span class="en">Remove the examination line; a follow-up visit is not billed again (additional procedures still are).</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2602-000016</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 345.00 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2512-000017</code> · <span class="o-Rejected">Rejected</span> · SUT-2025.07 · total 15,390.00 · at risk 540.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>CLN-002</code><br><span class="sev-Error">Error</span></td><td class="n">3</td><td>Satır 3 (902005) hekim branşı 1200; yetkili branşlar: 1600.<span class="en">Line 3 (902005) was performed by specialty 1200; authorised specialties: 1600.</span></td><td>Satırı yetkili branştaki (1600) hekime bağlayın veya istem/kons&#252;ltasyon kaydını ekleyin.<span class="en">Attribute the line to a physician in 1600 or attach the request/consultation record.</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2511-000018</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 238.80 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2512-000019</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 19,292.00 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2510-000020</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 132.10 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2602-000021</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 15,500.00 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2508-000022</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 11,130.80 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2602-000023</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 1,585.00 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2507-000024</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 11,130.80 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2601-000025</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 1,905.00 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2512-000026</code> · <span class="o-Rejected">Rejected</span> · SUT-2025.07 · total 120.50 · at risk 95.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>MDL-002</code><br><span class="sev-Error">Error</span></td><td class="n">1</td><td>Satır 1 (900102) hizmet tarihi 2025-12-02, provizyon d&#246;nemi 2025-12-03.. dışında.<span class="en">Line 1 (900102) is dated 2025-12-02, outside the provision period 2025-12-03...</span></td><td>Hizmet tarihini 2025-12-03.. aralığına d&#252;zeltin ya da hizmeti ait olduğu provizyona taşıyın.<span class="en">Correct the service date into 2025-12-03.. or move the service to the provision it belongs to.</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2510-000027</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 7,080.80 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2510-000028</code> · <span class="o-Rejected">Rejected</span> · SUT-2025.07 · total 552.00 · at risk 130.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>PRC-001</code><br><span class="sev-Error">Error</span></td><td class="n">1</td><td>Satır 1 (900101) birim fiyatı 130.00 TL, ge&#231;erli tarife 120.00 TL.<span class="en">Line 1 (900101) is priced 130.00 TRY; the tariff in force is 120.00 TRY.</span></td><td>Birim fiyatı 120.00 TL olarak d&#252;zeltin.<span class="en">Set the unit price to 120.00 TRY.</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2602-000029</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 11,130.80 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2508-000030</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 108.40 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2512-000031</code> · <span class="o-Rejected">Rejected</span> · SUT-2025.07 · total 1,570.00 · at risk 1,570.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>MDL-001</code><br><span class="sev-Error">Error</span></td><td class="n">-</td><td>Takip numarası &#39;tk-93&#39; bi&#231;im olarak ge&#231;ersiz; MEDULA hizmet kaydını kabul etmez.<span class="en">Tracking number &#39;tk-93&#39; is malformed; MEDULA will not accept the service record.</span></td><td>Provizyonu MEDULA&#39;dan yeniden sorgulayıp [0-9A-Z]{7,10} bi&#231;imindeki takip numarasını faturaya yazın.<span class="en">Re-query the provision in MEDULA and put the tracking number ([0-9A-Z]{7,10}) on the invoice.</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2601-000032</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 135.00 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2603-000033</code> · <span class="o-Rejected">Rejected</span> · SUT-2026.01 · total 21,200.00 · at risk 18,600.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>MDL-006</code><br><span class="sev-Error">Error</span></td><td class="n">1</td><td>Satır 1 (903008) hekim tescil no &#39;000000&#39; faturadaki hekim listesinde yok veya ge&#231;ersiz.<span class="en">Line 1 (903008): physician registration &#39;000000&#39; is not on the invoice or is malformed.</span></td><td>Hizmeti yapan hekimi (\d{6} bi&#231;iminde tescil no) faturaya ekleyin veya satırı doğru hekime bağlayın.<span class="en">Add the performing physician (registration \d{6}) to the invoice or link the line to the right one.</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2511-000034</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 17,492.00 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2510-000035</code> · <span class="o-Clean">Clean</span> · SUT-2025.07 · total 15,500.00 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2602-000036</code> · <span class="o-Rejected">Rejected</span> · SUT-2026.01 · total 16,180.80 · at risk 30.80 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>PKG-001</code><br><span class="sev-Error">Error</span></td><td class="n">3</td><td>Satır 3 (901001) 903007 paketinin kapsamında; ayrıca faturalandırılamaz.<span class="en">Line 3 (901001) is included in package 903007 and cannot be billed separately.</span></td><td>Satır 3&#39;i &#231;ıkarın; bedel 903007 paket fiyatına dahildir.<span class="en">Remove line 3; its cost is included in the price of package 903007.</span></td></tr>
+</table></div>
+</details>
+<details><summary><code>FT2602-000037</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 318.00 · at risk 0.00 TRY</summary>
+</details>
+<details><summary><code>FT2603-000038</code> · <span class="o-Clean">Clean</span> · SUT-2026.01 · total 19,250.00 · at risk 0.00 TRY</summary>
+</details>
+<details open><summary><code>FT2508-000039</code> · <span class="o-Rejected">Rejected</span> · SUT-2025.07 · total 21,340.00 · at risk 140.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>DEM-002</code><br><span class="sev-Error">Error</span></td><td class="n">3</td><td>Satır 3 (901009) -0 yaş aralığında faturalandırılır; hasta 21 yaşında.<span class="en">Line 3 (901009) is billable for ages -0; the patient is 21.</span></td><td>Doğum tarihini doğrulayın; yaş aralığı dışındaki uygulama i&#231;in tıbbi gerek&#231;e raporu ekleyin veya satırı &#231;ıkarın.<span class="en">Verify the birth date; attach a medical justification for an out-of-range use or remove the line.</span></td></tr>
+</table></div>
+</details>
+<details open><summary><code>FT2510-000040</code> · <span class="o-Rejected">Rejected</span> · SUT-2025.07 · total 765.00 · at risk 765.00 TRY</summary>
+<div class="scroll"><table><tr><th>Rule</th><th>Line</th><th>Neden / Reason</th><th>Öneri / Suggestion</th></tr>
+<tr><td><code>MDL-003</code><br><span class="sev-Error">Error</span></td><td class="n">-</td><td>Fatura tarihi 2025-09-22, son hizmet/taburcu tarihi 2025-09-23 &#246;ncesinde.<span class="en">Invoice date 2025-09-22 precedes the last service / discharge date 2025-09-23.</span></td><td>Faturayı 2025-09-23 veya sonrasına tarihleyin; yatan hastada taburcu olmadan fatura kesmeyin.<span class="en">Date the invoice on or after 2025-09-23; do not invoice an inpatient stay before discharge.</span></td></tr>
+</table></div>
+</details>
+</main></body></html>

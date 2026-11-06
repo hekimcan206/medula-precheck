@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>precheck</AssemblyName>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedulaPrecheck.Core\MedulaPrecheck.Core.csproj" />
+    <ProjectReference Include="..\MedulaPrecheck.Synthetic\MedulaPrecheck.Synthetic.csproj" />
+  </ItemGroup>
+
+</Project>

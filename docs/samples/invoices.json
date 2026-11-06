@@ -1,0 +1,2453 @@
+{
+  "invoices": [
+    {
+      "invoiceNo": "FT2511-000001",
+      "invoiceDate": "2025-11-09",
+      "facilityCode": "SYN918",
+      "patient": {
+        "patientRef": "P86745723",
+        "fullName": "Reyhan Eliçin",
+        "birthDate": "1961-01-10",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "TFN0KBGB",
+        "admissionDate": "2025-11-07",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "127817",
+          "branchCode": "2200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "M17.1",
+          "isPrimary": true
+        },
+        {
+          "icdCode": "D51.9",
+          "isPrimary": false
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-11-07",
+          "quantity": 1,
+          "unitPrice": 120.00,
+          "doctorRegistrationNo": "127817",
+          "amount": 120.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "901010",
+          "serviceDate": "2025-11-07",
+          "quantity": 1,
+          "unitPrice": 52.00,
+          "doctorRegistrationNo": "127817",
+          "amount": 52.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901006",
+          "serviceDate": "2025-11-07",
+          "quantity": 1,
+          "unitPrice": 13.40,
+          "doctorRegistrationNo": "127817",
+          "amount": 13.40
+        },
+        {
+          "lineNo": 4,
+          "sutCode": "904001",
+          "serviceDate": "2025-11-07",
+          "quantity": 1,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "127817",
+          "amount": 650.00
+        }
+      ],
+      "priorServices": [],
+      "total": 835.40
+    },
+    {
+      "invoiceNo": "FT2508-000002",
+      "invoiceDate": "2025-08-03",
+      "facilityCode": "SYN274",
+      "patient": {
+        "patientRef": "P43630027",
+        "fullName": "Şaban Günday",
+        "birthDate": "2004-08-04",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "T47N976J",
+        "admissionDate": "2025-07-15",
+        "dischargeDate": "2025-07-19",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "258235",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K80.2",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903008",
+          "serviceDate": "2025-07-15",
+          "quantity": 1,
+          "unitPrice": 18600.00,
+          "doctorRegistrationNo": "258235",
+          "amount": 18600.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-07-15",
+          "quantity": 4,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "258235",
+          "amount": 2600.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "903009",
+          "serviceDate": "2025-07-15",
+          "quantity": 1,
+          "unitPrice": 42.00,
+          "doctorRegistrationNo": "258235",
+          "amount": 42.00
+        }
+      ],
+      "priorServices": [],
+      "total": 21242.00
+    },
+    {
+      "invoiceNo": "FT2601-000003",
+      "invoiceDate": "2026-01-12",
+      "facilityCode": "SYN743",
+      "patient": {
+        "patientRef": "P47097128",
+        "fullName": "İpek Alnıaçık",
+        "birthDate": "1979-09-02",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "2R7G0CV2",
+        "admissionDate": "2025-12-29",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "1100"
+      },
+      "doctors": [
+        {
+          "registrationNo": "200557",
+          "branchCode": "1100"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "I10",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-12-29",
+          "quantity": 1,
+          "unitPrice": 135.00,
+          "doctorRegistrationNo": "200557",
+          "amount": 135.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "999999",
+          "serviceDate": "2025-12-29",
+          "quantity": 1,
+          "unitPrice": 100,
+          "doctorRegistrationNo": "200557",
+          "amount": 100
+        }
+      ],
+      "priorServices": [],
+      "total": 235.00
+    },
+    {
+      "invoiceNo": "FT2601-000004",
+      "invoiceDate": "2026-01-13",
+      "facilityCode": "SYN690",
+      "patient": {
+        "patientRef": "P27934600",
+        "fullName": "Anıl Sezek",
+        "birthDate": "1987-02-12",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "1272B24D",
+        "admissionDate": "2026-01-13",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "1400"
+      },
+      "doctors": [
+        {
+          "registrationNo": "260928",
+          "branchCode": "1400"
+        },
+        {
+          "registrationNo": "879232",
+          "branchCode": "1900"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "N20.0",
+          "isPrimary": true
+        },
+        {
+          "icdCode": "E55.9",
+          "isPrimary": false
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2026-01-13",
+          "quantity": 1,
+          "unitPrice": 135.00,
+          "doctorRegistrationNo": "260928",
+          "amount": 135.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "903011",
+          "serviceDate": "2026-01-13",
+          "quantity": 1,
+          "unitPrice": 320.00,
+          "doctorRegistrationNo": "879232",
+          "amount": 320.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901011",
+          "serviceDate": "2026-01-13",
+          "quantity": 1,
+          "unitPrice": 88.00,
+          "doctorRegistrationNo": "260928",
+          "amount": 88.00
+        },
+        {
+          "lineNo": 4,
+          "sutCode": "901006",
+          "serviceDate": "2026-01-13",
+          "quantity": 1,
+          "unitPrice": 13.40,
+          "doctorRegistrationNo": "260928",
+          "amount": 13.40
+        }
+      ],
+      "priorServices": [
+        {
+          "sutCode": "900101",
+          "serviceDate": "2023-03-09",
+          "quantity": 1,
+          "branchCode": "1400"
+        }
+      ],
+      "total": 556.40
+    },
+    {
+      "invoiceNo": "FT2509-000005",
+      "invoiceDate": "2025-09-13",
+      "facilityCode": "SYN571",
+      "patient": {
+        "patientRef": "P70318726",
+        "fullName": "Enes Erginsoy",
+        "birthDate": "1940-08-22",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "0MDRFBAS",
+        "admissionDate": "2025-08-30",
+        "treatmentType": "Outpatient",
+        "provisionType": "Emergency",
+        "branchCode": "1900"
+      },
+      "doctors": [
+        {
+          "registrationNo": "339438",
+          "branchCode": "1900"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "R10.4",
+          "isPrimary": true
+        },
+        {
+          "icdCode": "O80.0",
+          "isPrimary": false
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900102",
+          "serviceDate": "2025-08-30",
+          "quantity": 1,
+          "unitPrice": 95.00,
+          "doctorRegistrationNo": "339438",
+          "amount": 95.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "901008",
+          "serviceDate": "2025-08-30",
+          "quantity": 1,
+          "unitPrice": 95.00,
+          "doctorRegistrationNo": "339438",
+          "amount": 95.00
+        }
+      ],
+      "priorServices": [],
+      "total": 190.00
+    },
+    {
+      "invoiceNo": "FT2601-000006",
+      "invoiceDate": "2026-01-22",
+      "facilityCode": "SYN616",
+      "patient": {
+        "patientRef": "P84407513",
+        "fullName": "Dilhan Tütüncü",
+        "birthDate": "1973-10-19",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "EF0KBBKC",
+        "admissionDate": "2026-01-19",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2000"
+      },
+      "doctors": [
+        {
+          "registrationNo": "824267",
+          "branchCode": "2000"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "I10",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2026-01-19",
+          "quantity": 1,
+          "unitPrice": 135.00,
+          "doctorRegistrationNo": "824267",
+          "amount": 135.00
+        }
+      ],
+      "priorServices": [],
+      "total": 135.00
+    },
+    {
+      "invoiceNo": "FT2511-000007",
+      "invoiceDate": "2025-11-22",
+      "facilityCode": "SYN186",
+      "patient": {
+        "patientRef": "P68853271",
+        "fullName": "Şemsi Ekşioğlu",
+        "birthDate": "1942-07-04",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "HDZ87GDB",
+        "admissionDate": "2025-11-05",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2000"
+      },
+      "doctors": [
+        {
+          "registrationNo": "895024",
+          "branchCode": "2000"
+        },
+        {
+          "registrationNo": "734445",
+          "branchCode": "1400"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "R07.4",
+          "isPrimary": true
+        },
+        {
+          "icdCode": "C61.9",
+          "isPrimary": false
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-11-05",
+          "quantity": 1,
+          "unitPrice": 120.00,
+          "doctorRegistrationNo": "895024",
+          "amount": 120.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "903004",
+          "serviceDate": "2025-11-05",
+          "quantity": 1,
+          "unitPrice": 1850.00,
+          "doctorRegistrationNo": "734445",
+          "amount": 1850.00
+        }
+      ],
+      "priorServices": [
+        {
+          "sutCode": "900101",
+          "serviceDate": "2023-06-27",
+          "quantity": 1,
+          "branchCode": "2000"
+        }
+      ],
+      "total": 1970.00
+    },
+    {
+      "invoiceNo": "FT2511-000008",
+      "invoiceDate": "2025-11-04",
+      "facilityCode": "SYN590",
+      "patient": {
+        "patientRef": "P86266260",
+        "fullName": "Üzeyir Türkdoğan",
+        "birthDate": "1998-08-07",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "K5325GRY",
+        "admissionDate": "2025-10-25",
+        "dischargeDate": "2025-10-28",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "135898",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K80.2",
+          "isPrimary": true
+        },
+        {
+          "icdCode": "INVALID",
+          "isPrimary": false
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903008",
+          "serviceDate": "2025-10-25",
+          "quantity": 1,
+          "unitPrice": 18600.00,
+          "doctorRegistrationNo": "135898",
+          "amount": 18600.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-10-25",
+          "quantity": 3,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "135898",
+          "amount": 1950.00
+        }
+      ],
+      "priorServices": [],
+      "total": 20550.00
+    },
+    {
+      "invoiceNo": "FT2601-000009",
+      "invoiceDate": "2026-01-14",
+      "facilityCode": "SYN577",
+      "patient": {
+        "patientRef": "P33088893",
+        "fullName": "Müjde Tokatlıoğlu",
+        "birthDate": "1947-04-25",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "MLYZZ7LS",
+        "admissionDate": "2026-01-08",
+        "dischargeDate": "2026-01-12",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "690172",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K80.2",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903008",
+          "serviceDate": "2026-01-08",
+          "quantity": 1,
+          "unitPrice": 18600.00,
+          "doctorRegistrationNo": "690172",
+          "amount": 18600.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2026-01-08",
+          "quantity": 4,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "690172",
+          "amount": 2600.00
+        }
+      ],
+      "priorServices": [],
+      "total": 21200.00
+    },
+    {
+      "invoiceNo": "FT2603-000010",
+      "invoiceDate": "2026-03-13",
+      "facilityCode": "SYN405",
+      "patient": {
+        "patientRef": "P56109127",
+        "fullName": "Melda Ertürk",
+        "birthDate": "1962-02-22",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "9HF89NNJ",
+        "admissionDate": "2026-02-25",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "1300"
+      },
+      "doctors": [
+        {
+          "registrationNo": "619652",
+          "branchCode": "1300"
+        },
+        {
+          "registrationNo": "899282",
+          "branchCode": "1600"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "N76.0",
+          "isPrimary": true
+        },
+        {
+          "icdCode": "D51.9",
+          "isPrimary": false
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2026-02-25",
+          "quantity": 2,
+          "unitPrice": 135.00,
+          "doctorRegistrationNo": "619652",
+          "amount": 270.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "901010",
+          "serviceDate": "2026-02-25",
+          "quantity": 1,
+          "unitPrice": 52.00,
+          "doctorRegistrationNo": "619652",
+          "amount": 52.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "902002",
+          "serviceDate": "2026-02-25",
+          "quantity": 1,
+          "unitPrice": 260.00,
+          "doctorRegistrationNo": "899282",
+          "amount": 260.00
+        },
+        {
+          "lineNo": 4,
+          "sutCode": "902001",
+          "serviceDate": "2026-02-25",
+          "quantity": 1,
+          "unitPrice": 85.00,
+          "doctorRegistrationNo": "619652",
+          "amount": 85.00
+        }
+      ],
+      "priorServices": [],
+      "total": 667.00
+    },
+    {
+      "invoiceNo": "FT2508-000011",
+      "invoiceDate": "2025-08-24",
+      "facilityCode": "SYN104",
+      "patient": {
+        "patientRef": "P85105213",
+        "fullName": "Ekmel Doğan ",
+        "birthDate": "1982-06-28",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "L1YYAKCF",
+        "admissionDate": "2025-08-06",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "662058",
+          "branchCode": "2200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "M54.5",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-08-06",
+          "quantity": 1,
+          "unitPrice": 120.00,
+          "doctorRegistrationNo": "662058",
+          "amount": 120.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "901003",
+          "serviceDate": "2025-08-06",
+          "quantity": 1,
+          "unitPrice": 72.00,
+          "doctorRegistrationNo": "662058",
+          "amount": 72.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901006",
+          "serviceDate": "2025-08-06",
+          "quantity": 1,
+          "unitPrice": 13.40,
+          "doctorRegistrationNo": "662058",
+          "amount": 13.40
+        },
+        {
+          "lineNo": 4,
+          "sutCode": "901001",
+          "serviceDate": "2025-08-06",
+          "quantity": 1,
+          "unitPrice": 30.80,
+          "doctorRegistrationNo": "662058",
+          "amount": 30.80
+        }
+      ],
+      "priorServices": [],
+      "total": 236.20
+    },
+    {
+      "invoiceNo": "FT2512-000012",
+      "invoiceDate": "2025-12-24",
+      "facilityCode": "SYN234",
+      "patient": {
+        "patientRef": "P52730361",
+        "fullName": "Vehbi Gürmen",
+        "birthDate": "1975-10-14",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "A1LRSJ6Y",
+        "admissionDate": "2025-12-21",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2000"
+      },
+      "doctors": [
+        {
+          "registrationNo": "455509",
+          "branchCode": "2000"
+        },
+        {
+          "registrationNo": "682969",
+          "branchCode": "1600"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "I10",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-12-21",
+          "quantity": 1,
+          "unitPrice": 120.00,
+          "doctorRegistrationNo": "455509",
+          "amount": 120.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "902003",
+          "serviceDate": "2025-12-21",
+          "quantity": 1,
+          "unitPrice": 210.00,
+          "doctorRegistrationNo": "682969",
+          "amount": 210.00
+        }
+      ],
+      "priorServices": [
+        {
+          "sutCode": "900101",
+          "serviceDate": "2022-12-03",
+          "quantity": 1,
+          "branchCode": "2000"
+        }
+      ],
+      "total": 330.00
+    },
+    {
+      "invoiceNo": "FT2510-000013",
+      "invoiceDate": "2025-10-08",
+      "facilityCode": "SYN936",
+      "patient": {
+        "patientRef": "P69478727",
+        "fullName": "Neşet Mertoğlu",
+        "birthDate": "1986-04-16",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "CP1VD84V",
+        "admissionDate": "2025-10-08",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "585127",
+          "branchCode": "2200"
+        },
+        {
+          "registrationNo": "398527",
+          "branchCode": "1600"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "S93.4",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-10-08",
+          "quantity": 1,
+          "unitPrice": 120.00,
+          "doctorRegistrationNo": "585127",
+          "amount": 120.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "901007",
+          "serviceDate": "2025-10-08",
+          "quantity": 1,
+          "unitPrice": 12.10,
+          "doctorRegistrationNo": "585127",
+          "amount": 12.10
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "902005",
+          "serviceDate": "2025-10-08",
+          "quantity": 1,
+          "unitPrice": 540.00,
+          "doctorRegistrationNo": "398527",
+          "amount": 540.00
+        },
+        {
+          "lineNo": 4,
+          "sutCode": "902001",
+          "serviceDate": "2025-10-08",
+          "quantity": 1,
+          "unitPrice": 85.00,
+          "doctorRegistrationNo": "585127",
+          "amount": 85.00
+        }
+      ],
+      "priorServices": [],
+      "total": 757.10
+    },
+    {
+      "invoiceNo": "FT2510-000014",
+      "invoiceDate": "2025-10-02",
+      "facilityCode": "SYN760",
+      "patient": {
+        "patientRef": "P52121799",
+        "fullName": "Fulya Kavaklıoğlu",
+        "birthDate": "1974-07-31",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "53YH9GUB",
+        "admissionDate": "2025-09-24",
+        "dischargeDate": "2025-09-26",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "990762",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K80.2",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903008",
+          "serviceDate": "2025-09-24",
+          "quantity": 1,
+          "unitPrice": 18600.00,
+          "doctorRegistrationNo": "990762",
+          "amount": 18600.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-09-24",
+          "quantity": 2,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "990762",
+          "amount": 1300.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "903009",
+          "serviceDate": "2025-09-24",
+          "quantity": 1,
+          "unitPrice": 42.00,
+          "doctorRegistrationNo": "990762",
+          "amount": 42.00
+        }
+      ],
+      "priorServices": [],
+      "total": 19942.00
+    },
+    {
+      "invoiceNo": "FT2601-000015",
+      "invoiceDate": "2026-01-09",
+      "facilityCode": "SYN469",
+      "patient": {
+        "patientRef": "P57517502",
+        "fullName": "Itri Bademci",
+        "birthDate": "1952-10-22",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "7GJVTP4H",
+        "admissionDate": "2025-12-29",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "196880",
+          "branchCode": "2200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "M54.5",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-12-29",
+          "quantity": 1,
+          "unitPrice": 135.00,
+          "doctorRegistrationNo": "196880",
+          "amount": 135.00
+        }
+      ],
+      "priorServices": [
+        {
+          "sutCode": "900101",
+          "serviceDate": "2025-12-26",
+          "quantity": 1,
+          "branchCode": "2200"
+        }
+      ],
+      "total": 135.00
+    },
+    {
+      "invoiceNo": "FT2602-000016",
+      "invoiceDate": "2026-02-01",
+      "facilityCode": "SYN920",
+      "patient": {
+        "patientRef": "P67328916",
+        "fullName": "Mümtaz Akaydın",
+        "birthDate": "2005-05-25",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "6R67YTKN",
+        "admissionDate": "2026-02-01",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "206907",
+          "branchCode": "2200"
+        },
+        {
+          "registrationNo": "357083",
+          "branchCode": "1600"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "M17.1",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2026-02-01",
+          "quantity": 1,
+          "unitPrice": 135.00,
+          "doctorRegistrationNo": "206907",
+          "amount": 135.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "902003",
+          "serviceDate": "2026-02-01",
+          "quantity": 1,
+          "unitPrice": 210.00,
+          "doctorRegistrationNo": "357083",
+          "amount": 210.00
+        }
+      ],
+      "priorServices": [],
+      "total": 345.00
+    },
+    {
+      "invoiceNo": "FT2512-000017",
+      "invoiceDate": "2025-12-06",
+      "facilityCode": "SYN859",
+      "patient": {
+        "patientRef": "P88126123",
+        "fullName": "Sema Erbulak",
+        "birthDate": "1982-03-31",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "TKRBNVYG",
+        "admissionDate": "2025-11-23",
+        "dischargeDate": "2025-11-24",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "521057",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K35.8",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903007",
+          "serviceDate": "2025-11-23",
+          "quantity": 1,
+          "unitPrice": 14200.00,
+          "doctorRegistrationNo": "521057",
+          "amount": 14200.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-11-23",
+          "quantity": 1,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "521057",
+          "amount": 650.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "902005",
+          "serviceDate": "2025-11-23",
+          "quantity": 1,
+          "unitPrice": 540.00,
+          "doctorRegistrationNo": "521057",
+          "amount": 540.00
+        }
+      ],
+      "priorServices": [],
+      "total": 15390.00
+    },
+    {
+      "invoiceNo": "FT2511-000018",
+      "invoiceDate": "2025-11-21",
+      "facilityCode": "SYN294",
+      "patient": {
+        "patientRef": "P92772124",
+        "fullName": "Samed Akyürek",
+        "birthDate": "1985-11-10",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "HH13LVS7",
+        "admissionDate": "2025-11-04",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "1400"
+      },
+      "doctors": [
+        {
+          "registrationNo": "684827",
+          "branchCode": "1400"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "R31",
+          "isPrimary": true
+        },
+        {
+          "icdCode": "E10.9",
+          "isPrimary": false
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-11-04",
+          "quantity": 1,
+          "unitPrice": 120.00,
+          "doctorRegistrationNo": "684827",
+          "amount": 120.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "901002",
+          "serviceDate": "2025-11-04",
+          "quantity": 1,
+          "unitPrice": 69.10,
+          "doctorRegistrationNo": "684827",
+          "amount": 69.10
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901005",
+          "serviceDate": "2025-11-04",
+          "quantity": 1,
+          "unitPrice": 49.70,
+          "doctorRegistrationNo": "684827",
+          "amount": 49.70
+        }
+      ],
+      "priorServices": [],
+      "total": 238.80
+    },
+    {
+      "invoiceNo": "FT2512-000019",
+      "invoiceDate": "2025-12-16",
+      "facilityCode": "SYN762",
+      "patient": {
+        "patientRef": "P48803284",
+        "fullName": "Şener Yetkiner",
+        "birthDate": "1996-02-02",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "RPF6D8RH",
+        "admissionDate": "2025-12-10",
+        "dischargeDate": "2025-12-11",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "600671",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K80.2",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903008",
+          "serviceDate": "2025-12-10",
+          "quantity": 1,
+          "unitPrice": 18600.00,
+          "doctorRegistrationNo": "600671",
+          "amount": 18600.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-12-10",
+          "quantity": 1,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "600671",
+          "amount": 650.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "903009",
+          "serviceDate": "2025-12-10",
+          "quantity": 1,
+          "unitPrice": 42.00,
+          "doctorRegistrationNo": "600671",
+          "amount": 42.00
+        }
+      ],
+      "priorServices": [],
+      "total": 19292.00
+    },
+    {
+      "invoiceNo": "FT2510-000020",
+      "invoiceDate": "2025-10-13",
+      "facilityCode": "SYN691",
+      "patient": {
+        "patientRef": "P74890200",
+        "fullName": "Buğra Akgül",
+        "birthDate": "1951-11-07",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "RE9S9KRK",
+        "admissionDate": "2025-10-05",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "968894",
+          "branchCode": "2200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "S93.4",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-10-05",
+          "quantity": 1,
+          "unitPrice": 120.00,
+          "doctorRegistrationNo": "968894",
+          "amount": 120.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "901007",
+          "serviceDate": "2025-10-05",
+          "quantity": 1,
+          "unitPrice": 12.10,
+          "doctorRegistrationNo": "968894",
+          "amount": 12.10
+        }
+      ],
+      "priorServices": [],
+      "total": 132.10
+    },
+    {
+      "invoiceNo": "FT2602-000021",
+      "invoiceDate": "2026-02-05",
+      "facilityCode": "SYN994",
+      "patient": {
+        "patientRef": "P95222716",
+        "fullName": "Hayali Kaya ",
+        "birthDate": "1958-12-14",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "54J0YSB3",
+        "admissionDate": "2026-01-29",
+        "dischargeDate": "2026-01-31",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "108271",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K35.8",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903007",
+          "serviceDate": "2026-01-29",
+          "quantity": 1,
+          "unitPrice": 14200.00,
+          "doctorRegistrationNo": "108271",
+          "amount": 14200.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2026-01-29",
+          "quantity": 2,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "108271",
+          "amount": 1300.00
+        }
+      ],
+      "priorServices": [],
+      "total": 15500.00
+    },
+    {
+      "invoiceNo": "FT2508-000022",
+      "invoiceDate": "2025-08-03",
+      "facilityCode": "SYN705",
+      "patient": {
+        "patientRef": "P68913665",
+        "fullName": "Fehime Karadaş",
+        "birthDate": "2006-01-28",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "RJ2HJTY5",
+        "admissionDate": "2025-07-21",
+        "dischargeDate": "2025-07-23",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1300"
+      },
+      "doctors": [
+        {
+          "registrationNo": "142426",
+          "branchCode": "1300"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "O82.0",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903005",
+          "serviceDate": "2025-07-21",
+          "quantity": 1,
+          "unitPrice": 9800.00,
+          "doctorRegistrationNo": "142426",
+          "amount": 9800.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-07-21",
+          "quantity": 2,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "142426",
+          "amount": 1300.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901001",
+          "serviceDate": "2025-07-21",
+          "quantity": 1,
+          "unitPrice": 30.80,
+          "doctorRegistrationNo": "142426",
+          "amount": 30.80
+        }
+      ],
+      "priorServices": [],
+      "total": 11130.80
+    },
+    {
+      "invoiceNo": "FT2602-000023",
+      "invoiceDate": "2026-02-08",
+      "facilityCode": "SYN316",
+      "patient": {
+        "patientRef": "P82104625",
+        "fullName": "Işıl Kasapoğlu",
+        "birthDate": "2005-08-12",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "D0SCS8V6",
+        "admissionDate": "2026-02-08",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "464594",
+          "branchCode": "2200"
+        },
+        {
+          "registrationNo": "311831",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "M17.1",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2026-02-08",
+          "quantity": 1,
+          "unitPrice": 135.00,
+          "doctorRegistrationNo": "464594",
+          "amount": 135.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "903001",
+          "serviceDate": "2026-02-08",
+          "quantity": 1,
+          "unitPrice": 1450.00,
+          "doctorRegistrationNo": "311831",
+          "amount": 1450.00
+        }
+      ],
+      "priorServices": [],
+      "total": 1585.00
+    },
+    {
+      "invoiceNo": "FT2507-000024",
+      "invoiceDate": "2025-07-31",
+      "facilityCode": "SYN536",
+      "patient": {
+        "patientRef": "P64571638",
+        "fullName": "Ceylin Tanrıkulu",
+        "birthDate": "1991-04-18",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "Z8TFGMDA",
+        "admissionDate": "2025-07-24",
+        "dischargeDate": "2025-07-26",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1300"
+      },
+      "doctors": [
+        {
+          "registrationNo": "145124",
+          "branchCode": "1300"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "O82.0",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903005",
+          "serviceDate": "2025-07-24",
+          "quantity": 1,
+          "unitPrice": 9800.00,
+          "doctorRegistrationNo": "145124",
+          "amount": 9800.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-07-24",
+          "quantity": 2,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "145124",
+          "amount": 1300.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901001",
+          "serviceDate": "2025-07-24",
+          "quantity": 1,
+          "unitPrice": 30.80,
+          "doctorRegistrationNo": "145124",
+          "amount": 30.80
+        }
+      ],
+      "priorServices": [],
+      "total": 11130.80
+    },
+    {
+      "invoiceNo": "FT2601-000025",
+      "invoiceDate": "2026-01-30",
+      "facilityCode": "SYN321",
+      "patient": {
+        "patientRef": "P94486705",
+        "fullName": "İffet Tokatlıoğlu",
+        "birthDate": "1960-03-06",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "GYS0N8MB",
+        "admissionDate": "2026-01-27",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "940035",
+          "branchCode": "2200"
+        },
+        {
+          "registrationNo": "132633",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "S93.4",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2026-01-27",
+          "quantity": 1,
+          "unitPrice": 135.00,
+          "doctorRegistrationNo": "940035",
+          "amount": 135.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "903011",
+          "serviceDate": "2026-01-27",
+          "quantity": 1,
+          "unitPrice": 320.00,
+          "doctorRegistrationNo": "940035",
+          "amount": 320.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "903001",
+          "serviceDate": "2026-01-27",
+          "quantity": 1,
+          "unitPrice": 1450.00,
+          "doctorRegistrationNo": "132633",
+          "amount": 1450.00
+        }
+      ],
+      "priorServices": [],
+      "total": 1905.00
+    },
+    {
+      "invoiceNo": "FT2512-000026",
+      "invoiceDate": "2025-12-16",
+      "facilityCode": "SYN726",
+      "patient": {
+        "patientRef": "P75131147",
+        "fullName": "Serap Kahveci",
+        "birthDate": "2005-06-07",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "G9HBF57D",
+        "admissionDate": "2025-12-03",
+        "treatmentType": "Outpatient",
+        "provisionType": "Emergency",
+        "branchCode": "1900"
+      },
+      "doctors": [
+        {
+          "registrationNo": "975098",
+          "branchCode": "1900"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "S01.8",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900102",
+          "serviceDate": "2025-12-02",
+          "quantity": 1,
+          "unitPrice": 95.00,
+          "doctorRegistrationNo": "975098",
+          "amount": 95.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "901006",
+          "serviceDate": "2025-12-03",
+          "quantity": 1,
+          "unitPrice": 13.40,
+          "doctorRegistrationNo": "975098",
+          "amount": 13.40
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901007",
+          "serviceDate": "2025-12-03",
+          "quantity": 1,
+          "unitPrice": 12.10,
+          "doctorRegistrationNo": "975098",
+          "amount": 12.10
+        }
+      ],
+      "priorServices": [],
+      "total": 120.50
+    },
+    {
+      "invoiceNo": "FT2510-000027",
+      "invoiceDate": "2025-10-07",
+      "facilityCode": "SYN813",
+      "patient": {
+        "patientRef": "P58149062",
+        "fullName": "Gülen Ekici",
+        "birthDate": "1995-06-23",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "NAMZ2H52",
+        "admissionDate": "2025-10-04",
+        "dischargeDate": "2025-10-05",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1300"
+      },
+      "doctors": [
+        {
+          "registrationNo": "547511",
+          "branchCode": "1300"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "O80.0",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903006",
+          "serviceDate": "2025-10-04",
+          "quantity": 1,
+          "unitPrice": 6400.00,
+          "doctorRegistrationNo": "547511",
+          "amount": 6400.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-10-04",
+          "quantity": 1,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "547511",
+          "amount": 650.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901001",
+          "serviceDate": "2025-10-04",
+          "quantity": 1,
+          "unitPrice": 30.80,
+          "doctorRegistrationNo": "547511",
+          "amount": 30.80
+        }
+      ],
+      "priorServices": [],
+      "total": 7080.80
+    },
+    {
+      "invoiceNo": "FT2510-000028",
+      "invoiceDate": "2025-10-27",
+      "facilityCode": "SYN532",
+      "patient": {
+        "patientRef": "P74449799",
+        "fullName": "Akbatur Karaböcek",
+        "birthDate": "1969-07-03",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "6ZUPRJFY",
+        "admissionDate": "2025-10-21",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2000"
+      },
+      "doctors": [
+        {
+          "registrationNo": "989729",
+          "branchCode": "2000"
+        },
+        {
+          "registrationNo": "603097",
+          "branchCode": "1600"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "I25.1",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-10-21",
+          "quantity": 1,
+          "unitPrice": 130.00,
+          "doctorRegistrationNo": "989729",
+          "amount": 130.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "902006",
+          "serviceDate": "2025-10-21",
+          "quantity": 1,
+          "unitPrice": 380.00,
+          "doctorRegistrationNo": "603097",
+          "amount": 380.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "903009",
+          "serviceDate": "2025-10-21",
+          "quantity": 1,
+          "unitPrice": 42.00,
+          "doctorRegistrationNo": "989729",
+          "amount": 42.00
+        }
+      ],
+      "priorServices": [],
+      "total": 552.00
+    },
+    {
+      "invoiceNo": "FT2602-000029",
+      "invoiceDate": "2026-02-18",
+      "facilityCode": "SYN929",
+      "patient": {
+        "patientRef": "P20409887",
+        "fullName": "Zeynep Poyrazoğlu",
+        "birthDate": "2002-10-24",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "TMTS9FBR",
+        "admissionDate": "2026-02-09",
+        "dischargeDate": "2026-02-11",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1300"
+      },
+      "doctors": [
+        {
+          "registrationNo": "821306",
+          "branchCode": "1300"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "O82.0",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903005",
+          "serviceDate": "2026-02-09",
+          "quantity": 1,
+          "unitPrice": 9800.00,
+          "doctorRegistrationNo": "821306",
+          "amount": 9800.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2026-02-09",
+          "quantity": 2,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "821306",
+          "amount": 1300.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901001",
+          "serviceDate": "2026-02-09",
+          "quantity": 1,
+          "unitPrice": 30.80,
+          "doctorRegistrationNo": "821306",
+          "amount": 30.80
+        }
+      ],
+      "priorServices": [],
+      "total": 11130.80
+    },
+    {
+      "invoiceNo": "FT2508-000030",
+      "invoiceDate": "2025-08-07",
+      "facilityCode": "SYN651",
+      "patient": {
+        "patientRef": "P14055692",
+        "fullName": "Yonca Akan",
+        "birthDate": "1948-01-24",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "1GDEPJ2K",
+        "admissionDate": "2025-07-22",
+        "treatmentType": "Outpatient",
+        "provisionType": "Emergency",
+        "branchCode": "1900"
+      },
+      "doctors": [
+        {
+          "registrationNo": "805493",
+          "branchCode": "1900"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "R50.9",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900102",
+          "serviceDate": "2025-07-22",
+          "quantity": 1,
+          "unitPrice": 95.00,
+          "doctorRegistrationNo": "805493",
+          "amount": 95.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "901006",
+          "serviceDate": "2025-07-22",
+          "quantity": 1,
+          "unitPrice": 13.40,
+          "doctorRegistrationNo": "805493",
+          "amount": 13.40
+        }
+      ],
+      "priorServices": [
+        {
+          "sutCode": "900102",
+          "serviceDate": "2023-02-17",
+          "quantity": 1,
+          "branchCode": "1900"
+        }
+      ],
+      "total": 108.40
+    },
+    {
+      "invoiceNo": "FT2512-000031",
+      "invoiceDate": "2025-12-10",
+      "facilityCode": "SYN796",
+      "patient": {
+        "patientRef": "P46911115",
+        "fullName": "Balın Sinanoğlu",
+        "birthDate": "1989-07-04",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "tk-93",
+        "admissionDate": "2025-11-22",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "2200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "760095",
+          "branchCode": "2200"
+        },
+        {
+          "registrationNo": "111998",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "M17.1",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-11-22",
+          "quantity": 1,
+          "unitPrice": 120.00,
+          "doctorRegistrationNo": "760095",
+          "amount": 120.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "903001",
+          "serviceDate": "2025-11-22",
+          "quantity": 1,
+          "unitPrice": 1450.00,
+          "doctorRegistrationNo": "111998",
+          "amount": 1450.00
+        }
+      ],
+      "priorServices": [],
+      "total": 1570.00
+    },
+    {
+      "invoiceNo": "FT2601-000032",
+      "invoiceDate": "2026-01-01",
+      "facilityCode": "SYN525",
+      "patient": {
+        "patientRef": "P25065028",
+        "fullName": "Beşir Balcı",
+        "birthDate": "1987-08-29",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "60JTSP19",
+        "admissionDate": "2025-12-12",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "1400"
+      },
+      "doctors": [
+        {
+          "registrationNo": "495478",
+          "branchCode": "1400"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "N20.0",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2025-12-12",
+          "quantity": 1,
+          "unitPrice": 135.00,
+          "doctorRegistrationNo": "495478",
+          "amount": 135.00
+        }
+      ],
+      "priorServices": [
+        {
+          "sutCode": "900101",
+          "serviceDate": "2023-04-22",
+          "quantity": 1,
+          "branchCode": "1400"
+        }
+      ],
+      "total": 135.00
+    },
+    {
+      "invoiceNo": "FT2603-000033",
+      "invoiceDate": "2026-03-01",
+      "facilityCode": "SYN319",
+      "patient": {
+        "patientRef": "P91333814",
+        "fullName": "Selda Başoğlu",
+        "birthDate": "1999-11-24",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "M9L2H78T",
+        "admissionDate": "2026-02-12",
+        "dischargeDate": "2026-02-16",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "686125",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K80.2",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903008",
+          "serviceDate": "2026-02-12",
+          "quantity": 1,
+          "unitPrice": 18600.00,
+          "doctorRegistrationNo": "000000",
+          "amount": 18600.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2026-02-12",
+          "quantity": 4,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "686125",
+          "amount": 2600.00
+        }
+      ],
+      "priorServices": [],
+      "total": 21200.00
+    },
+    {
+      "invoiceNo": "FT2511-000034",
+      "invoiceDate": "2025-11-23",
+      "facilityCode": "SYN408",
+      "patient": {
+        "patientRef": "P27915447",
+        "fullName": "Hulki Gürmen",
+        "birthDate": "1965-09-28",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "K0GP3KAC",
+        "admissionDate": "2025-11-09",
+        "dischargeDate": "2025-11-14",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "639645",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K35.8",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903007",
+          "serviceDate": "2025-11-09",
+          "quantity": 1,
+          "unitPrice": 14200.00,
+          "doctorRegistrationNo": "639645",
+          "amount": 14200.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-11-09",
+          "quantity": 5,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "639645",
+          "amount": 3250.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "903009",
+          "serviceDate": "2025-11-09",
+          "quantity": 1,
+          "unitPrice": 42.00,
+          "doctorRegistrationNo": "639645",
+          "amount": 42.00
+        }
+      ],
+      "priorServices": [],
+      "total": 17492.00
+    },
+    {
+      "invoiceNo": "FT2510-000035",
+      "invoiceDate": "2025-10-12",
+      "facilityCode": "SYN895",
+      "patient": {
+        "patientRef": "P74083827",
+        "fullName": "Hızır Kuday",
+        "birthDate": "1957-06-18",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "F46CK3ZR",
+        "admissionDate": "2025-10-06",
+        "dischargeDate": "2025-10-08",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "555330",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K35.8",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903007",
+          "serviceDate": "2025-10-06",
+          "quantity": 1,
+          "unitPrice": 14200.00,
+          "doctorRegistrationNo": "555330",
+          "amount": 14200.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-10-06",
+          "quantity": 2,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "555330",
+          "amount": 1300.00
+        }
+      ],
+      "priorServices": [],
+      "total": 15500.00
+    },
+    {
+      "invoiceNo": "FT2602-000036",
+      "invoiceDate": "2026-02-05",
+      "facilityCode": "SYN286",
+      "patient": {
+        "patientRef": "P90589216",
+        "fullName": "Alp Mertoğlu",
+        "birthDate": "1983-12-05",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "87LE0348",
+        "admissionDate": "2026-01-21",
+        "dischargeDate": "2026-01-24",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "326886",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K35.8",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903007",
+          "serviceDate": "2026-01-21",
+          "quantity": 1,
+          "unitPrice": 14200.00,
+          "doctorRegistrationNo": "326886",
+          "amount": 14200.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2026-01-21",
+          "quantity": 3,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "326886",
+          "amount": 1950.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901001",
+          "serviceDate": "2026-01-21",
+          "quantity": 1,
+          "unitPrice": 30.80,
+          "doctorRegistrationNo": "326886",
+          "amount": 30.80
+        }
+      ],
+      "priorServices": [],
+      "total": 16180.80
+    },
+    {
+      "invoiceNo": "FT2602-000037",
+      "invoiceDate": "2026-02-14",
+      "facilityCode": "SYN158",
+      "patient": {
+        "patientRef": "P67276784",
+        "fullName": "Buğra Özgörkey",
+        "birthDate": "1938-02-20",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "ABJZGH69",
+        "admissionDate": "2026-01-30",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "1100"
+      },
+      "doctors": [
+        {
+          "registrationNo": "985591",
+          "branchCode": "1100"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K21.0",
+          "isPrimary": true
+        },
+        {
+          "icdCode": "E55.9",
+          "isPrimary": false
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900101",
+          "serviceDate": "2026-01-30",
+          "quantity": 1,
+          "unitPrice": 135.00,
+          "doctorRegistrationNo": "985591",
+          "amount": 135.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "901011",
+          "serviceDate": "2026-01-30",
+          "quantity": 1,
+          "unitPrice": 88.00,
+          "doctorRegistrationNo": "985591",
+          "amount": 88.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901008",
+          "serviceDate": "2026-01-30",
+          "quantity": 1,
+          "unitPrice": 95.00,
+          "doctorRegistrationNo": "985591",
+          "amount": 95.00
+        }
+      ],
+      "priorServices": [
+        {
+          "sutCode": "900101",
+          "serviceDate": "2023-06-13",
+          "quantity": 1,
+          "branchCode": "1100"
+        }
+      ],
+      "total": 318.00
+    },
+    {
+      "invoiceNo": "FT2603-000038",
+      "invoiceDate": "2026-03-04",
+      "facilityCode": "SYN384",
+      "patient": {
+        "patientRef": "P84996267",
+        "fullName": "Güniz Aşıkoğlu",
+        "birthDate": "1998-06-01",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "PEF4GJ4K",
+        "admissionDate": "2026-02-23",
+        "dischargeDate": "2026-02-24",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "381489",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K80.2",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903008",
+          "serviceDate": "2026-02-23",
+          "quantity": 1,
+          "unitPrice": 18600.00,
+          "doctorRegistrationNo": "381489",
+          "amount": 18600.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2026-02-23",
+          "quantity": 1,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "381489",
+          "amount": 650.00
+        }
+      ],
+      "priorServices": [],
+      "total": 19250.00
+    },
+    {
+      "invoiceNo": "FT2508-000039",
+      "invoiceDate": "2025-08-12",
+      "facilityCode": "SYN689",
+      "patient": {
+        "patientRef": "P50334100",
+        "fullName": "Yosun Dalkıran",
+        "birthDate": "2003-09-24",
+        "gender": "Female"
+      },
+      "provision": {
+        "trackingNo": "7RJLLEPF",
+        "admissionDate": "2025-08-06",
+        "dischargeDate": "2025-08-10",
+        "treatmentType": "Inpatient",
+        "provisionType": "Normal",
+        "branchCode": "1200"
+      },
+      "doctors": [
+        {
+          "registrationNo": "825034",
+          "branchCode": "1200"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "K80.2",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "903008",
+          "serviceDate": "2025-08-06",
+          "quantity": 1,
+          "unitPrice": 18600.00,
+          "doctorRegistrationNo": "825034",
+          "amount": 18600.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "904001",
+          "serviceDate": "2025-08-06",
+          "quantity": 4,
+          "unitPrice": 650.00,
+          "doctorRegistrationNo": "825034",
+          "amount": 2600.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901009",
+          "serviceDate": "2025-08-06",
+          "quantity": 1,
+          "unitPrice": 140.00,
+          "doctorRegistrationNo": "825034",
+          "amount": 140.00
+        }
+      ],
+      "priorServices": [],
+      "total": 21340.00
+    },
+    {
+      "invoiceNo": "FT2510-000040",
+      "invoiceDate": "2025-09-22",
+      "facilityCode": "SYN962",
+      "patient": {
+        "patientRef": "P94149808",
+        "fullName": "Fatin Önür",
+        "birthDate": "2011-06-19",
+        "gender": "Male"
+      },
+      "provision": {
+        "trackingNo": "HB7UCBTH",
+        "admissionDate": "2025-09-23",
+        "treatmentType": "Outpatient",
+        "provisionType": "Normal",
+        "branchCode": "1500"
+      },
+      "doctors": [
+        {
+          "registrationNo": "549594",
+          "branchCode": "1500"
+        },
+        {
+          "registrationNo": "436058",
+          "branchCode": "1600"
+        },
+        {
+          "registrationNo": "357367",
+          "branchCode": "1100"
+        }
+      ],
+      "diagnoses": [
+        {
+          "icdCode": "J06.9",
+          "isPrimary": true
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "sutCode": "900103",
+          "serviceDate": "2025-09-23",
+          "quantity": 1,
+          "unitPrice": 130.00,
+          "doctorRegistrationNo": "549594",
+          "amount": 130.00
+        },
+        {
+          "lineNo": 2,
+          "sutCode": "902005",
+          "serviceDate": "2025-09-23",
+          "quantity": 1,
+          "unitPrice": 540.00,
+          "doctorRegistrationNo": "436058",
+          "amount": 540.00
+        },
+        {
+          "lineNo": 3,
+          "sutCode": "901008",
+          "serviceDate": "2025-09-23",
+          "quantity": 1,
+          "unitPrice": 95.00,
+          "doctorRegistrationNo": "357367",
+          "amount": 95.00
+        }
+      ],
+      "priorServices": [
+        {
+          "sutCode": "900103",
+          "serviceDate": "2023-06-19",
+          "quantity": 1,
+          "branchCode": "1500"
+        }
+      ],
+      "total": 765.00
+    }
+  ]
+}
