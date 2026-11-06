@@ -1,0 +1,60 @@
+# `docker compose up` runs the whole demo with zero manual steps:
+#   oracle     → Oracle Database 23ai Free; deploy/oracle/init creates PRECHECK_OWNER and PRECHECK_APP
+#   installer  → same image as the API, `--init-oracle`: schema + PL/SQL + SUT reference data as the owner, exits
+#   api        → serves the .NET engine and the PL/SQL bulk path, connected as the stage-and-execute-only role
+# Then: http://localhost:18412/scalar  (all data synthetic)
+name: medula-precheck
+
+x-api-image: &api-image
+  image: medula-precheck-api:local
+  build:
+    context: .
+    dockerfile: Dockerfile
+
+services:
+  oracle:
+    image: gvenzl/oracle-free:23-slim-faststart
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD:-sys-dev-only}
+      OWNER_PASSWORD: ${OWNER_PASSWORD:-OwnerDev1}
+      APP_PASSWORD: ${APP_PASSWORD:-AppDev1}
+    ports:
+      # Loopback only, for SQL Developer / sqlplus during development.
+      - "127.0.0.1:${ORACLE_PORT:-15210}:1521"
+    volumes:
+      - ./deploy/oracle/init:/container-entrypoint-initdb.d:ro
+      - oradata:/opt/oracle/oradata
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      start_period: 10s
+
+  installer:
+    <<: *api-image
+    command: ["--init-oracle"]
+    environment:
+      ConnectionStrings__OracleOwner: Data Source=oracle:1521/FREEPDB1;User Id=precheck_owner;Password=${OWNER_PASSWORD:-OwnerDev1}
+    depends_on:
+      oracle:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    <<: *api-image
+    ports:
+      - "127.0.0.1:${API_PORT:-18412}:8080"
+    environment:
+      ConnectionStrings__OracleApp: Data Source=oracle:1521/FREEPDB1;User Id=precheck_app;Password=${APP_PASSWORD:-AppDev1}
+      OpenApi__Enabled: "true"
+      OTEL_SERVICE_NAME: medula-precheck-api
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-}
+    depends_on:
+      installer:
+        condition: service_completed_successfully
+    # No container HEALTHCHECK: the chiseled image has no shell or curl; probe /health/live and /health/ready.
+    restart: unless-stopped
+
+volumes:
+  oradata:
