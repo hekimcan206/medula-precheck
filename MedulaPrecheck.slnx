@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MedulaPrecheck.Core/MedulaPrecheck.Core.csproj" />
+    <Project Path="src/MedulaPrecheck.Synthetic/MedulaPrecheck.Synthetic.csproj" />
+    <Project Path="src/MedulaPrecheck.Oracle/MedulaPrecheck.Oracle.csproj" />
+    <Project Path="src/MedulaPrecheck.Api/MedulaPrecheck.Api.csproj" />
+    <Project Path="src/MedulaPrecheck.Cli/MedulaPrecheck.Cli.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MedulaPrecheck.UnitTests/MedulaPrecheck.UnitTests.csproj" />
+    <Project Path="tests/MedulaPrecheck.OracleTests/MedulaPrecheck.OracleTests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="AwesomeAssertions" />
+    <PackageReference Include="FsCheck.Xunit.v3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
+    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MedulaPrecheck.Core\MedulaPrecheck.Core.csproj" />
+    <ProjectReference Include="..\..\src\MedulaPrecheck.Synthetic\MedulaPrecheck.Synthetic.csproj" />
+    <ProjectReference Include="..\..\src\MedulaPrecheck.Api\MedulaPrecheck.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The committed sample reports are approval files: tests fail if the engine output drifts from them. -->
+    <None Include="..\..\docs\samples\**\*" Link="samples\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Using Include="AwesomeAssertions" />
+  </ItemGroup>
+
+</Project>
