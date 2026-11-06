@@ -10,4 +10,7 @@
     <Project Path="tests/MedulaPrecheck.UnitTests/MedulaPrecheck.UnitTests.csproj" />
     <Project Path="tests/MedulaPrecheck.OracleTests/MedulaPrecheck.OracleTests.csproj" />
   </Folder>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/MedulaPrecheck.Throughput/MedulaPrecheck.Throughput.csproj" />
+  </Folder>
 </Solution>

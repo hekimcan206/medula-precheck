@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <TieredPGO>true</TieredPGO>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Testcontainers.Oracle" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MedulaPrecheck.Core\MedulaPrecheck.Core.csproj" />
+    <ProjectReference Include="..\..\src\MedulaPrecheck.Synthetic\MedulaPrecheck.Synthetic.csproj" />
+    <ProjectReference Include="..\..\src\MedulaPrecheck.Oracle\MedulaPrecheck.Oracle.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\deploy\oracle\init\01-users.sh" Link="oracle-init\01-users.sh" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
